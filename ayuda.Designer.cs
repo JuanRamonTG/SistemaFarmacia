@@ -34,16 +34,19 @@
             // 
             // bup
             // 
+            this.bup.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.bup.Location = new System.Drawing.Point(503, 331);
             this.bup.Name = "bup";
             this.bup.Size = new System.Drawing.Size(85, 37);
             this.bup.TabIndex = 3;
-            this.bup.Text = "button1";
-            this.bup.UseVisualStyleBackColor = true;
+            this.bup.Text = "Ayuda";
+            this.bup.UseVisualStyleBackColor = false;
             // 
             // texto
             // 
+            this.texto.BackColor = System.Drawing.SystemColors.HotTrack;
             this.texto.Enabled = false;
+            this.texto.ForeColor = System.Drawing.Color.Black;
             this.texto.Location = new System.Drawing.Point(72, 33);
             this.texto.Multiline = true;
             this.texto.Name = "texto";
@@ -55,6 +58,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.ClientSize = new System.Drawing.Size(658, 390);
             this.Controls.Add(this.bup);
             this.Controls.Add(this.texto);
