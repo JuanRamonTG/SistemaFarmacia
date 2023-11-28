@@ -237,8 +237,8 @@
             // 
             // btnEliminarPaciente
             // 
-            this.btnEliminarPaciente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEliminarPaciente.ForeColor = System.Drawing.Color.Red;
+            this.btnEliminarPaciente.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEliminarPaciente.ForeColor = System.Drawing.Color.LightCoral;
             this.btnEliminarPaciente.Location = new System.Drawing.Point(192, 33);
             this.btnEliminarPaciente.Name = "btnEliminarPaciente";
             this.btnEliminarPaciente.Size = new System.Drawing.Size(70, 27);
@@ -248,7 +248,7 @@
             // 
             // btnModificarPaciente
             // 
-            this.btnModificarPaciente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnModificarPaciente.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnModificarPaciente.Location = new System.Drawing.Point(95, 33);
             this.btnModificarPaciente.Name = "btnModificarPaciente";
             this.btnModificarPaciente.Size = new System.Drawing.Size(80, 27);
@@ -258,7 +258,7 @@
             // 
             // btnNuevoPaciente
             // 
-            this.btnNuevoPaciente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNuevoPaciente.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNuevoPaciente.Location = new System.Drawing.Point(6, 33);
             this.btnNuevoPaciente.Name = "btnNuevoPaciente";
             this.btnNuevoPaciente.Size = new System.Drawing.Size(73, 27);
