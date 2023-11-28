@@ -247,6 +247,7 @@
             this.btnEliminarPaciente.TabIndex = 9;
             this.btnEliminarPaciente.Text = "Eliminar";
             this.btnEliminarPaciente.UseVisualStyleBackColor = true;
+            this.btnEliminarPaciente.Click += new System.EventHandler(this.btnEliminarPaciente_Click_1);
             // 
             // btnModificarPaciente
             // 
@@ -267,6 +268,7 @@
             this.btnNuevoPaciente.TabIndex = 7;
             this.btnNuevoPaciente.Text = "Nuevo";
             this.btnNuevoPaciente.UseVisualStyleBackColor = true;
+            this.btnNuevoPaciente.Click += new System.EventHandler(this.btnNuevoPaciente_Click);
             // 
             // grbNavegacionPaciente
             // 
