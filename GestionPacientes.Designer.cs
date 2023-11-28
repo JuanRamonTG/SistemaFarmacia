@@ -53,6 +53,7 @@
             this.btnModificarPaciente = new System.Windows.Forms.Button();
             this.btnNuevoPaciente = new System.Windows.Forms.Button();
             this.grbNavegacionPaciente = new System.Windows.Forms.GroupBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.lblRegistroPaciente = new System.Windows.Forms.Label();
             this.btnUltimoPaciente = new System.Windows.Forms.Button();
             this.btnAnteriorPaciente = new System.Windows.Forms.Button();
@@ -60,7 +61,6 @@
             this.cboOpcionBuscarPacientes = new System.Windows.Forms.ComboBox();
             this.txtBuscarPacientes = new System.Windows.Forms.TextBox();
             this.lblBuscarPacientes = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             this.erpPacientes = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.db_clinicaDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gestionPacientesBindingSource)).BeginInit();
@@ -284,6 +284,16 @@
             this.grbNavegacionPaciente.TabStop = false;
             this.grbNavegacionPaciente.Text = "Navegacion";
             // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(141, 33);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(25, 27);
+            this.button1.TabIndex = 21;
+            this.button1.Text = ">";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
             // lblRegistroPaciente
             // 
             this.lblRegistroPaciente.AutoSize = true;
@@ -342,6 +352,7 @@
             this.txtBuscarPacientes.Name = "txtBuscarPacientes";
             this.txtBuscarPacientes.Size = new System.Drawing.Size(233, 20);
             this.txtBuscarPacientes.TabIndex = 18;
+            this.txtBuscarPacientes.TextChanged += new System.EventHandler(this.txtBuscarPacientes_TextChanged);
             // 
             // lblBuscarPacientes
             // 
@@ -351,16 +362,6 @@
             this.lblBuscarPacientes.Size = new System.Drawing.Size(43, 13);
             this.lblBuscarPacientes.TabIndex = 20;
             this.lblBuscarPacientes.Text = "Buscar:";
-            // 
-            // button1
-            // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(141, 33);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(25, 27);
-            this.button1.TabIndex = 21;
-            this.button1.Text = ">";
-            this.button1.UseVisualStyleBackColor = true;
             // 
             // erpPacientes
             // 
