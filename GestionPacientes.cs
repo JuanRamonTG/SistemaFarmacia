@@ -55,11 +55,11 @@ namespace SistemaFarmacia
                 bs.DataSource = grdGestionPacientes.DataSource;
                 bs.Filter = opcion == 0 ? "codigo=" + valor : "nombre like '%" + valor + "%'";
                 grdGestionPacientes.DataSource = bs;
-                erpAlumnos.SetError(txtBuscarPacientes, "");
+                erpPacientes.SetError(txtBuscarPacientes, "");
             }
             catch (Exception e)
             {
-                erpAlumnos.SetError(txtBuscarAlumnos, "Por favor ingrese un codigo o nombre del estudiante a buscr");
+                erpPacientes.SetError(txtBuscarPacientes, "Por favor ingrese un codigo o nombre del estudiante a buscr");
             }
         }
 
