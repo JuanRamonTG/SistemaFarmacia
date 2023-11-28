@@ -58,7 +58,7 @@ namespace SistemaFarmacia
 
             private void mostrarPacientes()
             {
-                grdDatosPacientes.DataSource = miTablaPacientes.DefaultView;
+                grdGestionPacientes.DataSource = miTablaPacientes.DefaultView;
             }
 
             private void filtrarPacientes(String valor, int opcion)
@@ -66,9 +66,9 @@ namespace SistemaFarmacia
                 try
                 {
                     BindingSource bsPacientes = new BindingSource();
-                    bsPacientes.DataSource = grdDatosPacientes.DataSource;
+                    bsPacientes.DataSource = grdGestionPacientes.DataSource;
                     bsPacientes.Filter = opcion == 0 ? "codigo=" + valor : "nombre like '%" + valor + "%'";
-                    grdDatosPacientes.DataSource = bsPacientes;
+                grdGestionPacientes.DataSource = bsPacientes;
                     erpPacientes.SetError(txtBuscarPacientes, "");
                 }
                 catch (Exception ex)
@@ -86,7 +86,7 @@ namespace SistemaFarmacia
                     txtDireccionPaciente.Text = miTablaPacientes.Rows[posicion].ItemArray[3].ToString();
                     txtTelefonoPaciente.Text = miTablaPacientes.Rows[posicion].ItemArray[4].ToString();
 
-                    lblnRegistroPaciente.Text = (posicion + 1) + " de " + miTablaPacientes.Rows.Count;
+                    lblRegistroPaciente.Text = (posicion + 1) + " de " + miTablaPacientes.Rows.Count;
                 }
                 else
                 {
@@ -94,8 +94,63 @@ namespace SistemaFarmacia
                 }
             }
 
-            
-        
+        private void btnUltimoPaciente_Click(object sender, EventArgs e)
+        {
+            posicion = miTablaPacientes.Rows.Count - 1;
+            mostrarDatosPaciente();
+        }
+
+        private void btnAnteriorPaciente_Click(object sender, EventArgs e)
+        {
+            if (posicion > 0)
+            {
+                posicion--;
+                mostrarDatosPaciente();
+            }
+            else
+            {
+                MessageBox.Show("Primer registro", "Registro de Pacientes");
+            }
+        }
+
+        private void btnPrimeroPaciente_Click(object sender, EventArgs e)
+        {
+            posicion = 0;
+            mostrarDatosPaciente();
+        }
+
+        private void btnNuevoPaciente_Click(object sender, EventArgs e)
+        {
+            if (btnNuevoPaciente.Text == "Nuevo")
+            {
+                btnNuevoPaciente.Text = "Guardar";
+                btnModificarPaciente.Text = "Cancelar";
+                estadoControles(false);
+                limpiarCajas();
+                accion = "nuevo";
+            }
+            else
+            {//Guardar
+                String[] pacientes = new string[] {
+            accion, txtCodigoPaciente.Text, txtNombrePaciente.Text, txtDireccionPaciente.Text, txtTelefonoPaciente.Text,
+            miTablaPacientes.Rows[posicion].ItemArray[0].ToString()
+        };
+                String msg = objConexion.mantenimientoPacientes(pacientes);
+                if (msg != "1")
+                {
+                    MessageBox.Show("Error en el registro de pacientes: " + msg, "Registro de Pacientes.", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    actualizarDsPacientes();
+                    estadoControles(true);
+                    btnNuevoPaciente.Text = "Nuevo";
+                    btnModificarPaciente.Text = "Modificar";
+                }
+            }
+        }
+
+
 
         private void txtNombrePaciente_TextChanged(object sender, EventArgs e)
         {
