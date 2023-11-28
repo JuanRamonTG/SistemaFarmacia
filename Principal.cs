@@ -31,30 +31,30 @@ namespace SistemaFarmacia
 
         private void GestionEmpleadosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            GestionPacientes objGestionPacientes = new GestionPacientes();
-            objGestionPacientes.MdiParent = this;
-            objGestionPacientes.Show();
+            GestionEmpleados objGestionEmpleados = new GestionEmpleados();
+            objGestionEmpleados.MdiParent = this;
+            objGestionEmpleados.Show();
         }
 
         private void ResultadoDeAnalisisToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            GestionPacientes objGestionPacientes = new GestionPacientes();
-            objGestionPacientes.MdiParent = this;
-            objGestionPacientes.Show();
+            ResultadoDeAnalisis objResultadoDeAnalisis = new ResultadoDeAnalisis();
+            objResultadoDeAnalisis.MdiParent = this;
+            objResultadoDeAnalisis.Show();
         }
 
         private void InventarioToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            GestionPacientes objGestionPacientes = new GestionPacientes();
-            objGestionPacientes.MdiParent = this;
-            objGestionPacientes.Show();
+            Inventario objInventario = new Inventario();
+            objInventario.MdiParent = this;
+            objInventario.Show();
         }
 
         private void DocumentaciónClínicaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            GestionPacientes objGestionPacientes = new GestionPacientes();
-            objGestionPacientes.MdiParent = this;
-            objGestionPacientes.Show();
+            DocumentaciónClínica objDocumentaciónClínica = new DocumentaciónClínica();
+            objDocumentaciónClínica.MdiParent = this;
+            objDocumentaciónClínica.Show();
         }
     }
 }
