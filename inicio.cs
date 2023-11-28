@@ -19,8 +19,8 @@ namespace SistemaFarmacia
         }
         private void button1_Click(object sender, EventArgs e)
         {
-            string usuario = "Ramon";
-            string clave = "123";
+            string usuario = "Ram";
+            string clave = "1234";
 
             if (txtusuario.Text == usuario || (txtclave.Text == clave))
             {
