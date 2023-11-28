@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Data; //Libreria para conectarme a base de datos...
-using System.Data.SqlClient; //Libreria para manipular datos en SQLServer.
+using System.Data; 
+using System.Data.SqlClient; 
 
 namespace SistemaFarmacia
 {
@@ -27,14 +27,14 @@ namespace SistemaFarmacia
             miDs.Clear();
             miComando.Connection = miConexion;
 
-            miComando.CommandText = "select * from pacientes"; // Cambiado a 'pacientes'
+            miComando.CommandText = "select * from pacientes"; 
             miAdaptador.SelectCommand = miComando;
-            miAdaptador.Fill(miDs, "pacientes"); // Cambiado a 'pacientes'
+            miAdaptador.Fill(miDs, "pacientes"); 
 
             return miDs;
         }
 
-        public String mantenimientoPacientes(String[] pacientes) // Cambiado a 'mantenimientoPacientes'
+        public String mantenimientoPacientes(String[] pacientes) 
         {
             String sql = "";
             if (pacientes[0] == "nuevo")
@@ -45,11 +45,11 @@ namespace SistemaFarmacia
             else if (pacientes[0] == "modificar")
             {
                 sql = "UPDATE pacientes SET codigo='" + pacientes[1] + "', nombre='" + pacientes[2] + "', direccion='" + pacientes[3] +
-                    "', telefono='" + pacientes[4] + "' WHERE idPaciente='" + pacientes[5] + "'"; // Cambiado a 'idPaciente'
+                    "', telefono='" + pacientes[4] + "' WHERE idPaciente='" + pacientes[5] + "'"; 
             }
             else if (pacientes[0] == "eliminar")
             {
-                sql = "DELETE FROM pacientes WHERE idPaciente='" + pacientes[5] + "'"; // Cambiado a 'idPaciente'
+                sql = "DELETE FROM pacientes WHERE idPaciente='" + pacientes[5] + "'"; 
             }
             return ejecutarSql(sql);
         }
