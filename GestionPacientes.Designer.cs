@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.Label lblCodigoPaciente;
-            System.Windows.Forms.Label lblNombrePaciente;
-            System.Windows.Forms.Label lblDireccion;
-            System.Windows.Forms.Label lblTelefono;
+            this.lblCodigoPaciente = new System.Windows.Forms.Label();
+            this.lblNombrePaciente = new System.Windows.Forms.Label();
+            this.lblDireccion = new System.Windows.Forms.Label();
+            this.lblTelefono = new System.Windows.Forms.Label();
             this.db_clinicaDataSet = new SistemaFarmacia.db_clinicaDataSet();
             this.gestionPacientesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gestionPacientesTableAdapter = new SistemaFarmacia.db_clinicaDataSetTableAdapters.GestionPacientesTableAdapter();
@@ -48,23 +48,19 @@
             this.txtDireccionPaciente = new System.Windows.Forms.TextBox();
             this.txtTelefonoPaciente = new System.Windows.Forms.TextBox();
             this.grbDatosGestionPacientes = new System.Windows.Forms.GroupBox();
-            this.lblBuscarPaciente = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.grbEdicionAlumno = new System.Windows.Forms.GroupBox();
             this.btnEliminarAlumno = new System.Windows.Forms.Button();
             this.btnModificarAlumno = new System.Windows.Forms.Button();
             this.btnNuevoAlumno = new System.Windows.Forms.Button();
             this.grbNavegacionPaciente = new System.Windows.Forms.GroupBox();
-            this.lblRegistroPaciente = new System.Windows.Forms.Label();
             this.btnUltimoAlumno = new System.Windows.Forms.Button();
             this.btnSiguienteAlumno = new System.Windows.Forms.Button();
             this.btnAnteriorAlumno = new System.Windows.Forms.Button();
             this.btnPrimeroPaciente = new System.Windows.Forms.Button();
-            lblCodigoPaciente = new System.Windows.Forms.Label();
-            lblNombrePaciente = new System.Windows.Forms.Label();
-            lblDireccion = new System.Windows.Forms.Label();
-            lblTelefono = new System.Windows.Forms.Label();
+            this.lblRegistroPaciente = new System.Windows.Forms.Label();
+            this.cboOpcionBuscarPacientes = new System.Windows.Forms.ComboBox();
+            this.txtBuscarPacientes = new System.Windows.Forms.TextBox();
+            this.lblBuscarPacientes = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.db_clinicaDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gestionPacientesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdGestionPacientes)).BeginInit();
@@ -74,39 +70,39 @@
             // 
             // lblCodigoPaciente
             // 
-            lblCodigoPaciente.AutoSize = true;
-            lblCodigoPaciente.Location = new System.Drawing.Point(89, 74);
-            lblCodigoPaciente.Name = "lblCodigoPaciente";
-            lblCodigoPaciente.Size = new System.Drawing.Size(42, 13);
-            lblCodigoPaciente.TabIndex = 4;
-            lblCodigoPaciente.Text = "codigo:";
+            this.lblCodigoPaciente.AutoSize = true;
+            this.lblCodigoPaciente.Location = new System.Drawing.Point(89, 74);
+            this.lblCodigoPaciente.Name = "lblCodigoPaciente";
+            this.lblCodigoPaciente.Size = new System.Drawing.Size(42, 13);
+            this.lblCodigoPaciente.TabIndex = 4;
+            this.lblCodigoPaciente.Text = "codigo:";
             // 
             // lblNombrePaciente
             // 
-            lblNombrePaciente.AutoSize = true;
-            lblNombrePaciente.Location = new System.Drawing.Point(89, 113);
-            lblNombrePaciente.Name = "lblNombrePaciente";
-            lblNombrePaciente.Size = new System.Drawing.Size(45, 13);
-            lblNombrePaciente.TabIndex = 6;
-            lblNombrePaciente.Text = "nombre:";
+            this.lblNombrePaciente.AutoSize = true;
+            this.lblNombrePaciente.Location = new System.Drawing.Point(89, 113);
+            this.lblNombrePaciente.Name = "lblNombrePaciente";
+            this.lblNombrePaciente.Size = new System.Drawing.Size(45, 13);
+            this.lblNombrePaciente.TabIndex = 6;
+            this.lblNombrePaciente.Text = "nombre:";
             // 
             // lblDireccion
             // 
-            lblDireccion.AutoSize = true;
-            lblDireccion.Location = new System.Drawing.Point(89, 151);
-            lblDireccion.Name = "lblDireccion";
-            lblDireccion.Size = new System.Drawing.Size(53, 13);
-            lblDireccion.TabIndex = 8;
-            lblDireccion.Text = "direccion:";
+            this.lblDireccion.AutoSize = true;
+            this.lblDireccion.Location = new System.Drawing.Point(89, 151);
+            this.lblDireccion.Name = "lblDireccion";
+            this.lblDireccion.Size = new System.Drawing.Size(53, 13);
+            this.lblDireccion.TabIndex = 8;
+            this.lblDireccion.Text = "direccion:";
             // 
             // lblTelefono
             // 
-            lblTelefono.AutoSize = true;
-            lblTelefono.Location = new System.Drawing.Point(89, 197);
-            lblTelefono.Name = "lblTelefono";
-            lblTelefono.Size = new System.Drawing.Size(48, 13);
-            lblTelefono.TabIndex = 10;
-            lblTelefono.Text = "telefono:";
+            this.lblTelefono.AutoSize = true;
+            this.lblTelefono.Location = new System.Drawing.Point(89, 197);
+            this.lblTelefono.Name = "lblTelefono";
+            this.lblTelefono.Size = new System.Drawing.Size(48, 13);
+            this.lblTelefono.TabIndex = 10;
+            this.lblTelefono.Text = "telefono:";
             // 
             // db_clinicaDataSet
             // 
@@ -227,30 +223,6 @@
             this.grbDatosGestionPacientes.TabStop = false;
             this.grbDatosGestionPacientes.Text = "Datos";
             // 
-            // lblBuscarPaciente
-            // 
-            this.lblBuscarPaciente.AutoSize = true;
-            this.lblBuscarPaciente.Location = new System.Drawing.Point(401, 17);
-            this.lblBuscarPaciente.Name = "lblBuscarPaciente";
-            this.lblBuscarPaciente.Size = new System.Drawing.Size(43, 13);
-            this.lblBuscarPaciente.TabIndex = 13;
-            this.lblBuscarPaciente.Text = "Buscar:";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(657, 14);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(187, 20);
-            this.textBox1.TabIndex = 14;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(450, 13);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(175, 21);
-            this.comboBox1.TabIndex = 15;
-            // 
             // grbEdicionAlumno
             // 
             this.grbEdicionAlumno.Controls.Add(this.btnEliminarAlumno);
@@ -308,16 +280,6 @@
             this.grbNavegacionPaciente.TabStop = false;
             this.grbNavegacionPaciente.Text = "Navegacion";
             // 
-            // lblRegistroPaciente
-            // 
-            this.lblRegistroPaciente.AutoSize = true;
-            this.lblRegistroPaciente.Location = new System.Drawing.Point(99, 41);
-            this.lblRegistroPaciente.Name = "lblRegistroPaciente";
-            this.lblRegistroPaciente.Size = new System.Drawing.Size(36, 13);
-            this.lblRegistroPaciente.TabIndex = 6;
-            this.lblRegistroPaciente.Text = "x de n";
-            this.lblRegistroPaciente.Click += new System.EventHandler(this.LblnRegistroPaciente_Click);
-            // 
             // btnUltimoAlumno
             // 
             this.btnUltimoAlumno.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -358,24 +320,62 @@
             this.btnPrimeroPaciente.Text = "|<";
             this.btnPrimeroPaciente.UseVisualStyleBackColor = true;
             // 
+            // lblRegistroPaciente
+            // 
+            this.lblRegistroPaciente.AutoSize = true;
+            this.lblRegistroPaciente.Location = new System.Drawing.Point(99, 41);
+            this.lblRegistroPaciente.Name = "lblRegistroPaciente";
+            this.lblRegistroPaciente.Size = new System.Drawing.Size(36, 13);
+            this.lblRegistroPaciente.TabIndex = 18;
+            this.lblRegistroPaciente.Text = "x de n";
+            this.lblRegistroPaciente.Click += new System.EventHandler(this.lblRegistroPaciente_Click);
+            // 
+            // cboOpcionBuscarPacientes
+            // 
+            this.cboOpcionBuscarPacientes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboOpcionBuscarPacientes.FormattingEnabled = true;
+            this.cboOpcionBuscarPacientes.Items.AddRange(new object[] {
+            "Codigo",
+            "Materia"});
+            this.cboOpcionBuscarPacientes.Location = new System.Drawing.Point(450, 12);
+            this.cboOpcionBuscarPacientes.Name = "cboOpcionBuscarPacientes";
+            this.cboOpcionBuscarPacientes.Size = new System.Drawing.Size(163, 21);
+            this.cboOpcionBuscarPacientes.TabIndex = 19;
+            // 
+            // txtBuscarPacientes
+            // 
+            this.txtBuscarPacientes.Location = new System.Drawing.Point(634, 13);
+            this.txtBuscarPacientes.Name = "txtBuscarPacientes";
+            this.txtBuscarPacientes.Size = new System.Drawing.Size(233, 20);
+            this.txtBuscarPacientes.TabIndex = 18;
+            // 
+            // lblBuscarPacientes
+            // 
+            this.lblBuscarPacientes.AutoSize = true;
+            this.lblBuscarPacientes.Location = new System.Drawing.Point(390, 15);
+            this.lblBuscarPacientes.Name = "lblBuscarPacientes";
+            this.lblBuscarPacientes.Size = new System.Drawing.Size(43, 13);
+            this.lblBuscarPacientes.TabIndex = 20;
+            this.lblBuscarPacientes.Text = "Buscar:";
+            // 
             // GestionPacientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(973, 413);
+            this.Controls.Add(this.lblBuscarPacientes);
+            this.Controls.Add(this.cboOpcionBuscarPacientes);
+            this.Controls.Add(this.txtBuscarPacientes);
             this.Controls.Add(this.grbEdicionAlumno);
             this.Controls.Add(this.grbNavegacionPaciente);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.lblBuscarPaciente);
             this.Controls.Add(this.grdGestionPacientes);
-            this.Controls.Add(lblCodigoPaciente);
+            this.Controls.Add(this.lblCodigoPaciente);
             this.Controls.Add(this.txtCodigoPaciente);
-            this.Controls.Add(lblNombrePaciente);
+            this.Controls.Add(this.lblNombrePaciente);
             this.Controls.Add(this.txtNombrePaciente);
-            this.Controls.Add(lblDireccion);
+            this.Controls.Add(this.lblDireccion);
             this.Controls.Add(this.txtDireccionPaciente);
-            this.Controls.Add(lblTelefono);
+            this.Controls.Add(this.lblTelefono);
             this.Controls.Add(this.txtTelefonoPaciente);
             this.Controls.Add(this.grbDatosGestionPacientes);
             this.Name = "GestionPacientes";
@@ -409,18 +409,22 @@
         private System.Windows.Forms.TextBox txtDireccionPaciente;
         private System.Windows.Forms.TextBox txtTelefonoPaciente;
         private System.Windows.Forms.GroupBox grbDatosGestionPacientes;
-        private System.Windows.Forms.Label lblBuscarPaciente;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.GroupBox grbEdicionAlumno;
         private System.Windows.Forms.Button btnEliminarAlumno;
         private System.Windows.Forms.Button btnModificarAlumno;
         private System.Windows.Forms.Button btnNuevoAlumno;
         private System.Windows.Forms.GroupBox grbNavegacionPaciente;
-        private System.Windows.Forms.Label lblRegistroPaciente;
         private System.Windows.Forms.Button btnUltimoAlumno;
         private System.Windows.Forms.Button btnSiguienteAlumno;
         private System.Windows.Forms.Button btnAnteriorAlumno;
         private System.Windows.Forms.Button btnPrimeroPaciente;
+        private System.Windows.Forms.Label lblCodigoPaciente;
+        private System.Windows.Forms.Label lblNombrePaciente;
+        private System.Windows.Forms.Label lblDireccion;
+        private System.Windows.Forms.Label lblTelefono;
+        private System.Windows.Forms.Label lblRegistroPaciente;
+        private System.Windows.Forms.ComboBox cboOpcionBuscarPacientes;
+        private System.Windows.Forms.TextBox txtBuscarPacientes;
+        private System.Windows.Forms.Label lblBuscarPacientes;
     }
 }
