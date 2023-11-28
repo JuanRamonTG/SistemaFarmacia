@@ -48,23 +48,23 @@
             this.txtDireccionPaciente = new System.Windows.Forms.TextBox();
             this.txtTelefonoPaciente = new System.Windows.Forms.TextBox();
             this.grbDatosGestionPacientes = new System.Windows.Forms.GroupBox();
-            this.grbEdicionAlumno = new System.Windows.Forms.GroupBox();
-            this.btnEliminarAlumno = new System.Windows.Forms.Button();
-            this.btnModificarAlumno = new System.Windows.Forms.Button();
-            this.btnNuevoAlumno = new System.Windows.Forms.Button();
+            this.grbEdicionPaciente = new System.Windows.Forms.GroupBox();
+            this.btnEliminarPaciente = new System.Windows.Forms.Button();
+            this.btnModificarPaciente = new System.Windows.Forms.Button();
+            this.btnNuevoPaciente = new System.Windows.Forms.Button();
             this.grbNavegacionPaciente = new System.Windows.Forms.GroupBox();
-            this.btnUltimoAlumno = new System.Windows.Forms.Button();
-            this.btnSiguienteAlumno = new System.Windows.Forms.Button();
-            this.btnAnteriorAlumno = new System.Windows.Forms.Button();
-            this.btnPrimeroPaciente = new System.Windows.Forms.Button();
             this.lblRegistroPaciente = new System.Windows.Forms.Label();
+            this.btnUltimoPaciente = new System.Windows.Forms.Button();
+            this.btnAnteriorPaciente = new System.Windows.Forms.Button();
+            this.btnPrimeroPaciente = new System.Windows.Forms.Button();
             this.cboOpcionBuscarPacientes = new System.Windows.Forms.ComboBox();
             this.txtBuscarPacientes = new System.Windows.Forms.TextBox();
             this.lblBuscarPacientes = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.db_clinicaDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gestionPacientesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdGestionPacientes)).BeginInit();
-            this.grbEdicionAlumno.SuspendLayout();
+            this.grbEdicionPaciente.SuspendLayout();
             this.grbNavegacionPaciente.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -223,55 +223,55 @@
             this.grbDatosGestionPacientes.TabStop = false;
             this.grbDatosGestionPacientes.Text = "Datos";
             // 
-            // grbEdicionAlumno
+            // grbEdicionPaciente
             // 
-            this.grbEdicionAlumno.Controls.Add(this.btnEliminarAlumno);
-            this.grbEdicionAlumno.Controls.Add(this.btnModificarAlumno);
-            this.grbEdicionAlumno.Controls.Add(this.btnNuevoAlumno);
-            this.grbEdicionAlumno.Location = new System.Drawing.Point(634, 300);
-            this.grbEdicionAlumno.Name = "grbEdicionAlumno";
-            this.grbEdicionAlumno.Size = new System.Drawing.Size(282, 91);
-            this.grbEdicionAlumno.TabIndex = 17;
-            this.grbEdicionAlumno.TabStop = false;
-            this.grbEdicionAlumno.Text = "Edicion";
+            this.grbEdicionPaciente.Controls.Add(this.btnEliminarPaciente);
+            this.grbEdicionPaciente.Controls.Add(this.btnModificarPaciente);
+            this.grbEdicionPaciente.Controls.Add(this.btnNuevoPaciente);
+            this.grbEdicionPaciente.Location = new System.Drawing.Point(634, 300);
+            this.grbEdicionPaciente.Name = "grbEdicionPaciente";
+            this.grbEdicionPaciente.Size = new System.Drawing.Size(282, 79);
+            this.grbEdicionPaciente.TabIndex = 17;
+            this.grbEdicionPaciente.TabStop = false;
+            this.grbEdicionPaciente.Text = "Edicion";
             // 
-            // btnEliminarAlumno
+            // btnEliminarPaciente
             // 
-            this.btnEliminarAlumno.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEliminarAlumno.ForeColor = System.Drawing.Color.Red;
-            this.btnEliminarAlumno.Location = new System.Drawing.Point(192, 33);
-            this.btnEliminarAlumno.Name = "btnEliminarAlumno";
-            this.btnEliminarAlumno.Size = new System.Drawing.Size(70, 27);
-            this.btnEliminarAlumno.TabIndex = 9;
-            this.btnEliminarAlumno.Text = "Eliminar";
-            this.btnEliminarAlumno.UseVisualStyleBackColor = true;
+            this.btnEliminarPaciente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEliminarPaciente.ForeColor = System.Drawing.Color.Red;
+            this.btnEliminarPaciente.Location = new System.Drawing.Point(192, 33);
+            this.btnEliminarPaciente.Name = "btnEliminarPaciente";
+            this.btnEliminarPaciente.Size = new System.Drawing.Size(70, 27);
+            this.btnEliminarPaciente.TabIndex = 9;
+            this.btnEliminarPaciente.Text = "Eliminar";
+            this.btnEliminarPaciente.UseVisualStyleBackColor = true;
             // 
-            // btnModificarAlumno
+            // btnModificarPaciente
             // 
-            this.btnModificarAlumno.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnModificarAlumno.Location = new System.Drawing.Point(95, 33);
-            this.btnModificarAlumno.Name = "btnModificarAlumno";
-            this.btnModificarAlumno.Size = new System.Drawing.Size(80, 27);
-            this.btnModificarAlumno.TabIndex = 8;
-            this.btnModificarAlumno.Text = "Modificar";
-            this.btnModificarAlumno.UseVisualStyleBackColor = true;
+            this.btnModificarPaciente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnModificarPaciente.Location = new System.Drawing.Point(95, 33);
+            this.btnModificarPaciente.Name = "btnModificarPaciente";
+            this.btnModificarPaciente.Size = new System.Drawing.Size(80, 27);
+            this.btnModificarPaciente.TabIndex = 8;
+            this.btnModificarPaciente.Text = "Modificar";
+            this.btnModificarPaciente.UseVisualStyleBackColor = true;
             // 
-            // btnNuevoAlumno
+            // btnNuevoPaciente
             // 
-            this.btnNuevoAlumno.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNuevoAlumno.Location = new System.Drawing.Point(6, 33);
-            this.btnNuevoAlumno.Name = "btnNuevoAlumno";
-            this.btnNuevoAlumno.Size = new System.Drawing.Size(73, 27);
-            this.btnNuevoAlumno.TabIndex = 7;
-            this.btnNuevoAlumno.Text = "Nuevo";
-            this.btnNuevoAlumno.UseVisualStyleBackColor = true;
+            this.btnNuevoPaciente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNuevoPaciente.Location = new System.Drawing.Point(6, 33);
+            this.btnNuevoPaciente.Name = "btnNuevoPaciente";
+            this.btnNuevoPaciente.Size = new System.Drawing.Size(73, 27);
+            this.btnNuevoPaciente.TabIndex = 7;
+            this.btnNuevoPaciente.Text = "Nuevo";
+            this.btnNuevoPaciente.UseVisualStyleBackColor = true;
             // 
             // grbNavegacionPaciente
             // 
+            this.grbNavegacionPaciente.Controls.Add(this.button1);
             this.grbNavegacionPaciente.Controls.Add(this.lblRegistroPaciente);
-            this.grbNavegacionPaciente.Controls.Add(this.btnUltimoAlumno);
-            this.grbNavegacionPaciente.Controls.Add(this.btnSiguienteAlumno);
-            this.grbNavegacionPaciente.Controls.Add(this.btnAnteriorAlumno);
+            this.grbNavegacionPaciente.Controls.Add(this.btnUltimoPaciente);
+            this.grbNavegacionPaciente.Controls.Add(this.btnAnteriorPaciente);
             this.grbNavegacionPaciente.Controls.Add(this.btnPrimeroPaciente);
             this.grbNavegacionPaciente.Location = new System.Drawing.Point(404, 300);
             this.grbNavegacionPaciente.Name = "grbNavegacionPaciente";
@@ -279,46 +279,6 @@
             this.grbNavegacionPaciente.TabIndex = 16;
             this.grbNavegacionPaciente.TabStop = false;
             this.grbNavegacionPaciente.Text = "Navegacion";
-            // 
-            // btnUltimoAlumno
-            // 
-            this.btnUltimoAlumno.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUltimoAlumno.Location = new System.Drawing.Point(172, 33);
-            this.btnUltimoAlumno.Name = "btnUltimoAlumno";
-            this.btnUltimoAlumno.Size = new System.Drawing.Size(37, 27);
-            this.btnUltimoAlumno.TabIndex = 3;
-            this.btnUltimoAlumno.Text = ">|";
-            this.btnUltimoAlumno.UseVisualStyleBackColor = true;
-            // 
-            // btnSiguienteAlumno
-            // 
-            this.btnSiguienteAlumno.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSiguienteAlumno.Location = new System.Drawing.Point(141, 33);
-            this.btnSiguienteAlumno.Name = "btnSiguienteAlumno";
-            this.btnSiguienteAlumno.Size = new System.Drawing.Size(25, 27);
-            this.btnSiguienteAlumno.TabIndex = 2;
-            this.btnSiguienteAlumno.Text = ">";
-            this.btnSiguienteAlumno.UseVisualStyleBackColor = true;
-            // 
-            // btnAnteriorAlumno
-            // 
-            this.btnAnteriorAlumno.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAnteriorAlumno.Location = new System.Drawing.Point(64, 33);
-            this.btnAnteriorAlumno.Name = "btnAnteriorAlumno";
-            this.btnAnteriorAlumno.Size = new System.Drawing.Size(29, 27);
-            this.btnAnteriorAlumno.TabIndex = 1;
-            this.btnAnteriorAlumno.Text = "<";
-            this.btnAnteriorAlumno.UseVisualStyleBackColor = true;
-            // 
-            // btnPrimeroPaciente
-            // 
-            this.btnPrimeroPaciente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPrimeroPaciente.Location = new System.Drawing.Point(24, 33);
-            this.btnPrimeroPaciente.Name = "btnPrimeroPaciente";
-            this.btnPrimeroPaciente.Size = new System.Drawing.Size(34, 27);
-            this.btnPrimeroPaciente.TabIndex = 0;
-            this.btnPrimeroPaciente.Text = "|<";
-            this.btnPrimeroPaciente.UseVisualStyleBackColor = true;
             // 
             // lblRegistroPaciente
             // 
@@ -329,6 +289,36 @@
             this.lblRegistroPaciente.TabIndex = 18;
             this.lblRegistroPaciente.Text = "x de n";
             this.lblRegistroPaciente.Click += new System.EventHandler(this.lblRegistroPaciente_Click);
+            // 
+            // btnUltimoPaciente
+            // 
+            this.btnUltimoPaciente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUltimoPaciente.Location = new System.Drawing.Point(172, 33);
+            this.btnUltimoPaciente.Name = "btnUltimoPaciente";
+            this.btnUltimoPaciente.Size = new System.Drawing.Size(37, 27);
+            this.btnUltimoPaciente.TabIndex = 3;
+            this.btnUltimoPaciente.Text = ">|";
+            this.btnUltimoPaciente.UseVisualStyleBackColor = true;
+            // 
+            // btnAnteriorPaciente
+            // 
+            this.btnAnteriorPaciente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAnteriorPaciente.Location = new System.Drawing.Point(64, 33);
+            this.btnAnteriorPaciente.Name = "btnAnteriorPaciente";
+            this.btnAnteriorPaciente.Size = new System.Drawing.Size(29, 27);
+            this.btnAnteriorPaciente.TabIndex = 1;
+            this.btnAnteriorPaciente.Text = "<";
+            this.btnAnteriorPaciente.UseVisualStyleBackColor = true;
+            // 
+            // btnPrimeroPaciente
+            // 
+            this.btnPrimeroPaciente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPrimeroPaciente.Location = new System.Drawing.Point(24, 33);
+            this.btnPrimeroPaciente.Name = "btnPrimeroPaciente";
+            this.btnPrimeroPaciente.Size = new System.Drawing.Size(34, 27);
+            this.btnPrimeroPaciente.TabIndex = 0;
+            this.btnPrimeroPaciente.Text = "|<";
+            this.btnPrimeroPaciente.UseVisualStyleBackColor = true;
             // 
             // cboOpcionBuscarPacientes
             // 
@@ -358,6 +348,16 @@
             this.lblBuscarPacientes.TabIndex = 20;
             this.lblBuscarPacientes.Text = "Buscar:";
             // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(141, 33);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(25, 27);
+            this.button1.TabIndex = 21;
+            this.button1.Text = ">";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
             // GestionPacientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -366,7 +366,7 @@
             this.Controls.Add(this.lblBuscarPacientes);
             this.Controls.Add(this.cboOpcionBuscarPacientes);
             this.Controls.Add(this.txtBuscarPacientes);
-            this.Controls.Add(this.grbEdicionAlumno);
+            this.Controls.Add(this.grbEdicionPaciente);
             this.Controls.Add(this.grbNavegacionPaciente);
             this.Controls.Add(this.grdGestionPacientes);
             this.Controls.Add(this.lblCodigoPaciente);
@@ -384,7 +384,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.db_clinicaDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gestionPacientesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdGestionPacientes)).EndInit();
-            this.grbEdicionAlumno.ResumeLayout(false);
+            this.grbEdicionPaciente.ResumeLayout(false);
             this.grbNavegacionPaciente.ResumeLayout(false);
             this.grbNavegacionPaciente.PerformLayout();
             this.ResumeLayout(false);
@@ -409,14 +409,13 @@
         private System.Windows.Forms.TextBox txtDireccionPaciente;
         private System.Windows.Forms.TextBox txtTelefonoPaciente;
         private System.Windows.Forms.GroupBox grbDatosGestionPacientes;
-        private System.Windows.Forms.GroupBox grbEdicionAlumno;
-        private System.Windows.Forms.Button btnEliminarAlumno;
-        private System.Windows.Forms.Button btnModificarAlumno;
-        private System.Windows.Forms.Button btnNuevoAlumno;
+        private System.Windows.Forms.GroupBox grbEdicionPaciente;
+        private System.Windows.Forms.Button btnEliminarPaciente;
+        private System.Windows.Forms.Button btnModificarPaciente;
+        private System.Windows.Forms.Button btnNuevoPaciente;
         private System.Windows.Forms.GroupBox grbNavegacionPaciente;
-        private System.Windows.Forms.Button btnUltimoAlumno;
-        private System.Windows.Forms.Button btnSiguienteAlumno;
-        private System.Windows.Forms.Button btnAnteriorAlumno;
+        private System.Windows.Forms.Button btnUltimoPaciente;
+        private System.Windows.Forms.Button btnAnteriorPaciente;
         private System.Windows.Forms.Button btnPrimeroPaciente;
         private System.Windows.Forms.Label lblCodigoPaciente;
         private System.Windows.Forms.Label lblNombrePaciente;
@@ -426,5 +425,6 @@
         private System.Windows.Forms.ComboBox cboOpcionBuscarPacientes;
         private System.Windows.Forms.TextBox txtBuscarPacientes;
         private System.Windows.Forms.Label lblBuscarPacientes;
+        private System.Windows.Forms.Button button1;
     }
 }
