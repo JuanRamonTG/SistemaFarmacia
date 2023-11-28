@@ -61,6 +61,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ayuda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ayuda.Designer.cs">
+      <DependentUpon>ayuda.cs</DependentUpon>
+    </Compile>
     <Compile Include="Conexion.cs" />
     <Compile Include="db_clinicaDataSet.cs">
       <DependentUpon>db_clinicaDataSet.xsd</DependentUpon>
@@ -114,6 +120,9 @@
     <Compile Include="ResultadoDeAnalisis.Designer.cs">
       <DependentUpon>ResultadoDeAnalisis.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="ayuda.resx">
+      <DependentUpon>ayuda.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GestionPacientes.resx">
       <DependentUpon>GestionPacientes.cs</DependentUpon>
     </EmbeddedResource>
