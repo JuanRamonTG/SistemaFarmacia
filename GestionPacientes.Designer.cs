@@ -61,11 +61,13 @@
             this.txtBuscarPacientes = new System.Windows.Forms.TextBox();
             this.lblBuscarPacientes = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
+            this.erpPacientes = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.db_clinicaDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gestionPacientesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdGestionPacientes)).BeginInit();
             this.grbEdicionPaciente.SuspendLayout();
             this.grbNavegacionPaciente.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.erpPacientes)).BeginInit();
             this.SuspendLayout();
             // 
             // lblCodigoPaciente
@@ -358,6 +360,10 @@
             this.button1.Text = ">";
             this.button1.UseVisualStyleBackColor = true;
             // 
+            // erpPacientes
+            // 
+            this.erpPacientes.ContainerControl = this;
+            // 
             // GestionPacientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -387,6 +393,7 @@
             this.grbEdicionPaciente.ResumeLayout(false);
             this.grbNavegacionPaciente.ResumeLayout(false);
             this.grbNavegacionPaciente.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.erpPacientes)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -426,5 +433,6 @@
         private System.Windows.Forms.TextBox txtBuscarPacientes;
         private System.Windows.Forms.Label lblBuscarPacientes;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ErrorProvider erpPacientes;
     }
 }
