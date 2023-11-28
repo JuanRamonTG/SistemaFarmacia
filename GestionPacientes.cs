@@ -27,7 +27,7 @@ namespace SistemaFarmacia
 
         private void GestionPacientes_Load(object sender, EventArgs e)
         {
-            // TODO: esta línea de código carga datos en la tabla 'db_clinicaDataSet.GestionPacientes' Puede moverla o quitarla según sea necesario.
+            // TODO: esta línea de código carga datos en la tabla 'db_clinicaDataSet.GestionPacientes' 
             this.gestionPacientesTableAdapter.Fill(this.db_clinicaDataSet.GestionPacientes);
 
         }
@@ -71,7 +71,7 @@ namespace SistemaFarmacia
                 grdGestionPacientes.DataSource = bsPacientes;
                     erpPacientes.SetError(txtBuscarPacientes, "");
                 }
-                catch (Exception ex)
+                catch (Exception e)
                 {
                     erpPacientes.SetError(txtBuscarPacientes, "Por favor ingrese un código o nombre del paciente a buscar");
                 }
@@ -147,6 +147,99 @@ namespace SistemaFarmacia
                     btnNuevoPaciente.Text = "Nuevo";
                     btnModificarPaciente.Text = "Modificar";
                 }
+            }
+        }
+
+        private void btnModificarPaciente_Click(object sender, EventArgs e)
+        {
+            if (btnModificarPaciente.Text == "Modificar")
+            {
+                btnNuevoPaciente.Text = "Guardar";
+                btnModificarPaciente.Text = "Cancelar";
+                estadoControles(false);
+                accion = "modificar";
+            }
+            else
+            {
+                estadoControles(true);
+                mostrarDatosPaciente();
+                btnNuevoPaciente.Text = "Nuevo";
+                btnModificarPaciente.Text = "Modificar";
+            }
+        }
+
+        private void estadoControles(Boolean estado)
+        {
+            txtCodigoPaciente.ReadOnly = estado;
+            txtNombrePaciente.ReadOnly = estado;
+            txtDireccionPaciente.ReadOnly = estado;
+            txtTelefonoPaciente.ReadOnly = estado;
+
+            grbNavegacionPaciente.Enabled = estado;
+            btnEliminarPaciente.Enabled = estado;
+            txtBuscarPacientes.ReadOnly = !estado;
+        }
+
+        private void limpiarCajas()
+        {
+            txtCodigoPaciente.Text = "";
+            txtNombrePaciente.Text = "";
+            txtDireccionPaciente.Text = "";
+            txtTelefonoPaciente.Text = "";
+        }
+
+        private void txtBuscarPacientes_KeyUp(object sender, KeyEventArgs e)
+        {
+            filtrarPacientes(txtBuscarPacientes.Text, cboOpcionBuscarPacientes.SelectedIndex);
+            if (e.KeyValue == 13)
+            {//tecla enter
+                seleccionarPaciente();
+            }
+        }
+
+        private void seleccionarPaciente()
+        {
+            posicion = miTablaPacientes.Rows.IndexOf(miTablaPacientes.Rows.Find(grdGestionPacientes.CurrentRow.Cells["idPaciente"].Value.ToString()));
+            mostrarDatosPaciente();
+        }
+
+        private void grdDatosPacientes_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            seleccionarPaciente();
+        }
+
+        private void btnEliminarPaciente_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Esta seguro de eliminar a " + txtNombrePaciente.Text, "Eliminando Pacientes",
+                MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                String[] pacientes = new string[] {
+            "eliminar",txtCodigoPaciente.Text, txtNombrePaciente.Text, txtDireccionPaciente.Text, txtTelefonoPaciente.Text,
+            miTablaPacientes.Rows[posicion].ItemArray[0].ToString()
+        };
+                String msg = objConexion.mantenimientoPacientes(pacientes);
+                if (msg != "1")
+                {
+                    MessageBox.Show("Error en la eliminacion de pacientes: " + msg, "Registro de Pacientes.", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    posicion = 0;
+                    actualizarDsPacientes();
+                }
+            }
+        }
+
+        private void btnSiguientePaciente_Click(object sender, EventArgs e)
+        {
+            if (posicion < miTablaPacientes.Rows.Count - 1)
+            {
+                posicion++;
+                mostrarDatosPaciente();
+            }
+            else
+            {
+                MessageBox.Show("Ultimo Registro", "Registro de Pacientes");
             }
         }
 

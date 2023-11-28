@@ -17,7 +17,7 @@ namespace SistemaFarmacia
 
         public Conexion()
         {
-            String cadenaConexion = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\db_academico.mdf;Integrated Security=True";
+            String cadenaConexion = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\db_clinica.mdf;Integrated Security=True";
             miConexion.ConnectionString = cadenaConexion;
             miConexion.Open();
         }
