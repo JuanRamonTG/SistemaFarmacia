@@ -36,5 +36,10 @@ namespace SistemaFarmacia
         {
 
         }
+
+        private void LblnRegistroPaciente_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -33,23 +33,10 @@
             System.Windows.Forms.Label lblNombrePaciente;
             System.Windows.Forms.Label lblDireccion;
             System.Windows.Forms.Label lblTelefono;
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GestionPacientes));
             this.db_clinicaDataSet = new SistemaFarmacia.db_clinicaDataSet();
             this.gestionPacientesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gestionPacientesTableAdapter = new SistemaFarmacia.db_clinicaDataSetTableAdapters.GestionPacientesTableAdapter();
             this.tableAdapterManager = new SistemaFarmacia.db_clinicaDataSetTableAdapters.TableAdapterManager();
-            this.gestionPacientesBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
-            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
-            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
-            this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
-            this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.grdGestionPacientes = new System.Windows.Forms.DataGridView();
             this.idPacientes = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -64,15 +51,25 @@
             this.lblBuscarPaciente = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.grbEdicionAlumno = new System.Windows.Forms.GroupBox();
+            this.btnEliminarAlumno = new System.Windows.Forms.Button();
+            this.btnModificarAlumno = new System.Windows.Forms.Button();
+            this.btnNuevoAlumno = new System.Windows.Forms.Button();
+            this.grbNavegacionPaciente = new System.Windows.Forms.GroupBox();
+            this.lblRegistroPaciente = new System.Windows.Forms.Label();
+            this.btnUltimoAlumno = new System.Windows.Forms.Button();
+            this.btnSiguienteAlumno = new System.Windows.Forms.Button();
+            this.btnAnteriorAlumno = new System.Windows.Forms.Button();
+            this.btnPrimeroPaciente = new System.Windows.Forms.Button();
             lblCodigoPaciente = new System.Windows.Forms.Label();
             lblNombrePaciente = new System.Windows.Forms.Label();
             lblDireccion = new System.Windows.Forms.Label();
             lblTelefono = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.db_clinicaDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gestionPacientesBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gestionPacientesBindingNavigator)).BeginInit();
-            this.gestionPacientesBindingNavigator.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdGestionPacientes)).BeginInit();
+            this.grbEdicionAlumno.SuspendLayout();
+            this.grbNavegacionPaciente.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblCodigoPaciente
@@ -130,122 +127,6 @@
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
             this.tableAdapterManager.GestionPacientesTableAdapter = this.gestionPacientesTableAdapter;
             this.tableAdapterManager.UpdateOrder = SistemaFarmacia.db_clinicaDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
-            // 
-            // gestionPacientesBindingNavigator
-            // 
-            this.gestionPacientesBindingNavigator.AddNewItem = this.bindingNavigatorAddNewItem;
-            this.gestionPacientesBindingNavigator.BindingSource = this.gestionPacientesBindingSource;
-            this.gestionPacientesBindingNavigator.CountItem = this.bindingNavigatorCountItem;
-            this.gestionPacientesBindingNavigator.DeleteItem = this.bindingNavigatorDeleteItem;
-            this.gestionPacientesBindingNavigator.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.gestionPacientesBindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.bindingNavigatorMoveFirstItem,
-            this.bindingNavigatorMovePreviousItem,
-            this.bindingNavigatorSeparator,
-            this.bindingNavigatorPositionItem,
-            this.bindingNavigatorCountItem,
-            this.bindingNavigatorSeparator1,
-            this.bindingNavigatorMoveNextItem,
-            this.bindingNavigatorMoveLastItem,
-            this.bindingNavigatorSeparator2,
-            this.bindingNavigatorAddNewItem,
-            this.bindingNavigatorDeleteItem});
-            this.gestionPacientesBindingNavigator.Location = new System.Drawing.Point(0, 331);
-            this.gestionPacientesBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
-            this.gestionPacientesBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
-            this.gestionPacientesBindingNavigator.MoveNextItem = this.bindingNavigatorMoveNextItem;
-            this.gestionPacientesBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
-            this.gestionPacientesBindingNavigator.Name = "gestionPacientesBindingNavigator";
-            this.gestionPacientesBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.gestionPacientesBindingNavigator.Size = new System.Drawing.Size(973, 25);
-            this.gestionPacientesBindingNavigator.TabIndex = 0;
-            this.gestionPacientesBindingNavigator.Text = "bindingNavigator1";
-            // 
-            // bindingNavigatorAddNewItem
-            // 
-            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
-            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
-            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorAddNewItem.Text = "Agregar nuevo";
-            // 
-            // bindingNavigatorCountItem
-            // 
-            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(37, 22);
-            this.bindingNavigatorCountItem.Text = "de {0}";
-            this.bindingNavigatorCountItem.ToolTipText = "Número total de elementos";
-            // 
-            // bindingNavigatorDeleteItem
-            // 
-            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
-            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
-            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorDeleteItem.Text = "Eliminar";
-            // 
-            // bindingNavigatorMoveFirstItem
-            // 
-            this.bindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveFirstItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem.Image")));
-            this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
-            this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorMoveFirstItem.Text = "Mover primero";
-            // 
-            // bindingNavigatorMovePreviousItem
-            // 
-            this.bindingNavigatorMovePreviousItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMovePreviousItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem.Image")));
-            this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
-            this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorMovePreviousItem.Text = "Mover anterior";
-            // 
-            // bindingNavigatorSeparator
-            // 
-            this.bindingNavigatorSeparator.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 25);
-            // 
-            // bindingNavigatorPositionItem
-            // 
-            this.bindingNavigatorPositionItem.AccessibleName = "Posición";
-            this.bindingNavigatorPositionItem.AutoSize = false;
-            this.bindingNavigatorPositionItem.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
-            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
-            this.bindingNavigatorPositionItem.Text = "0";
-            this.bindingNavigatorPositionItem.ToolTipText = "Posición actual";
-            // 
-            // bindingNavigatorSeparator1
-            // 
-            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
-            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 25);
-            // 
-            // bindingNavigatorMoveNextItem
-            // 
-            this.bindingNavigatorMoveNextItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
-            this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
-            this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorMoveNextItem.Text = "Mover siguiente";
-            // 
-            // bindingNavigatorMoveLastItem
-            // 
-            this.bindingNavigatorMoveLastItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
-            this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
-            this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorMoveLastItem.Text = "Mover último";
-            // 
-            // bindingNavigatorSeparator2
-            // 
-            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
-            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
             // 
             // grdGestionPacientes
             // 
@@ -370,11 +251,120 @@
             this.comboBox1.Size = new System.Drawing.Size(175, 21);
             this.comboBox1.TabIndex = 15;
             // 
+            // grbEdicionAlumno
+            // 
+            this.grbEdicionAlumno.Controls.Add(this.btnEliminarAlumno);
+            this.grbEdicionAlumno.Controls.Add(this.btnModificarAlumno);
+            this.grbEdicionAlumno.Controls.Add(this.btnNuevoAlumno);
+            this.grbEdicionAlumno.Location = new System.Drawing.Point(634, 300);
+            this.grbEdicionAlumno.Name = "grbEdicionAlumno";
+            this.grbEdicionAlumno.Size = new System.Drawing.Size(282, 91);
+            this.grbEdicionAlumno.TabIndex = 17;
+            this.grbEdicionAlumno.TabStop = false;
+            this.grbEdicionAlumno.Text = "Edicion";
+            // 
+            // btnEliminarAlumno
+            // 
+            this.btnEliminarAlumno.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEliminarAlumno.ForeColor = System.Drawing.Color.Red;
+            this.btnEliminarAlumno.Location = new System.Drawing.Point(192, 33);
+            this.btnEliminarAlumno.Name = "btnEliminarAlumno";
+            this.btnEliminarAlumno.Size = new System.Drawing.Size(70, 27);
+            this.btnEliminarAlumno.TabIndex = 9;
+            this.btnEliminarAlumno.Text = "Eliminar";
+            this.btnEliminarAlumno.UseVisualStyleBackColor = true;
+            // 
+            // btnModificarAlumno
+            // 
+            this.btnModificarAlumno.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnModificarAlumno.Location = new System.Drawing.Point(95, 33);
+            this.btnModificarAlumno.Name = "btnModificarAlumno";
+            this.btnModificarAlumno.Size = new System.Drawing.Size(80, 27);
+            this.btnModificarAlumno.TabIndex = 8;
+            this.btnModificarAlumno.Text = "Modificar";
+            this.btnModificarAlumno.UseVisualStyleBackColor = true;
+            // 
+            // btnNuevoAlumno
+            // 
+            this.btnNuevoAlumno.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNuevoAlumno.Location = new System.Drawing.Point(6, 33);
+            this.btnNuevoAlumno.Name = "btnNuevoAlumno";
+            this.btnNuevoAlumno.Size = new System.Drawing.Size(73, 27);
+            this.btnNuevoAlumno.TabIndex = 7;
+            this.btnNuevoAlumno.Text = "Nuevo";
+            this.btnNuevoAlumno.UseVisualStyleBackColor = true;
+            // 
+            // grbNavegacionPaciente
+            // 
+            this.grbNavegacionPaciente.Controls.Add(this.lblRegistroPaciente);
+            this.grbNavegacionPaciente.Controls.Add(this.btnUltimoAlumno);
+            this.grbNavegacionPaciente.Controls.Add(this.btnSiguienteAlumno);
+            this.grbNavegacionPaciente.Controls.Add(this.btnAnteriorAlumno);
+            this.grbNavegacionPaciente.Controls.Add(this.btnPrimeroPaciente);
+            this.grbNavegacionPaciente.Location = new System.Drawing.Point(404, 300);
+            this.grbNavegacionPaciente.Name = "grbNavegacionPaciente";
+            this.grbNavegacionPaciente.Size = new System.Drawing.Size(225, 79);
+            this.grbNavegacionPaciente.TabIndex = 16;
+            this.grbNavegacionPaciente.TabStop = false;
+            this.grbNavegacionPaciente.Text = "Navegacion";
+            // 
+            // lblRegistroPaciente
+            // 
+            this.lblRegistroPaciente.AutoSize = true;
+            this.lblRegistroPaciente.Location = new System.Drawing.Point(99, 41);
+            this.lblRegistroPaciente.Name = "lblRegistroPaciente";
+            this.lblRegistroPaciente.Size = new System.Drawing.Size(36, 13);
+            this.lblRegistroPaciente.TabIndex = 6;
+            this.lblRegistroPaciente.Text = "x de n";
+            this.lblRegistroPaciente.Click += new System.EventHandler(this.LblnRegistroPaciente_Click);
+            // 
+            // btnUltimoAlumno
+            // 
+            this.btnUltimoAlumno.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUltimoAlumno.Location = new System.Drawing.Point(172, 33);
+            this.btnUltimoAlumno.Name = "btnUltimoAlumno";
+            this.btnUltimoAlumno.Size = new System.Drawing.Size(37, 27);
+            this.btnUltimoAlumno.TabIndex = 3;
+            this.btnUltimoAlumno.Text = ">|";
+            this.btnUltimoAlumno.UseVisualStyleBackColor = true;
+            // 
+            // btnSiguienteAlumno
+            // 
+            this.btnSiguienteAlumno.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSiguienteAlumno.Location = new System.Drawing.Point(141, 33);
+            this.btnSiguienteAlumno.Name = "btnSiguienteAlumno";
+            this.btnSiguienteAlumno.Size = new System.Drawing.Size(25, 27);
+            this.btnSiguienteAlumno.TabIndex = 2;
+            this.btnSiguienteAlumno.Text = ">";
+            this.btnSiguienteAlumno.UseVisualStyleBackColor = true;
+            // 
+            // btnAnteriorAlumno
+            // 
+            this.btnAnteriorAlumno.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAnteriorAlumno.Location = new System.Drawing.Point(64, 33);
+            this.btnAnteriorAlumno.Name = "btnAnteriorAlumno";
+            this.btnAnteriorAlumno.Size = new System.Drawing.Size(29, 27);
+            this.btnAnteriorAlumno.TabIndex = 1;
+            this.btnAnteriorAlumno.Text = "<";
+            this.btnAnteriorAlumno.UseVisualStyleBackColor = true;
+            // 
+            // btnPrimeroPaciente
+            // 
+            this.btnPrimeroPaciente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPrimeroPaciente.Location = new System.Drawing.Point(24, 33);
+            this.btnPrimeroPaciente.Name = "btnPrimeroPaciente";
+            this.btnPrimeroPaciente.Size = new System.Drawing.Size(34, 27);
+            this.btnPrimeroPaciente.TabIndex = 0;
+            this.btnPrimeroPaciente.Text = "|<";
+            this.btnPrimeroPaciente.UseVisualStyleBackColor = true;
+            // 
             // GestionPacientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(973, 356);
+            this.ClientSize = new System.Drawing.Size(973, 413);
+            this.Controls.Add(this.grbEdicionAlumno);
+            this.Controls.Add(this.grbNavegacionPaciente);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.lblBuscarPaciente);
@@ -387,17 +377,16 @@
             this.Controls.Add(this.txtDireccionPaciente);
             this.Controls.Add(lblTelefono);
             this.Controls.Add(this.txtTelefonoPaciente);
-            this.Controls.Add(this.gestionPacientesBindingNavigator);
             this.Controls.Add(this.grbDatosGestionPacientes);
             this.Name = "GestionPacientes";
             this.Text = "GestionPacientes";
             this.Load += new System.EventHandler(this.GestionPacientes_Load);
             ((System.ComponentModel.ISupportInitialize)(this.db_clinicaDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gestionPacientesBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gestionPacientesBindingNavigator)).EndInit();
-            this.gestionPacientesBindingNavigator.ResumeLayout(false);
-            this.gestionPacientesBindingNavigator.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdGestionPacientes)).EndInit();
+            this.grbEdicionAlumno.ResumeLayout(false);
+            this.grbNavegacionPaciente.ResumeLayout(false);
+            this.grbNavegacionPaciente.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -409,18 +398,6 @@
         private System.Windows.Forms.BindingSource gestionPacientesBindingSource;
         private db_clinicaDataSetTableAdapters.GestionPacientesTableAdapter gestionPacientesTableAdapter;
         private db_clinicaDataSetTableAdapters.TableAdapterManager tableAdapterManager;
-        private System.Windows.Forms.BindingNavigator gestionPacientesBindingNavigator;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorAddNewItem;
-        private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorDeleteItem;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveFirstItem;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorMovePreviousItem;
-        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator;
-        private System.Windows.Forms.ToolStripTextBox bindingNavigatorPositionItem;
-        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator1;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveNextItem;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
-        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
         private System.Windows.Forms.DataGridView grdGestionPacientes;
         private System.Windows.Forms.DataGridViewTextBoxColumn idPacientes;
         private System.Windows.Forms.DataGridViewTextBoxColumn codigo;
@@ -435,5 +412,15 @@
         private System.Windows.Forms.Label lblBuscarPaciente;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.GroupBox grbEdicionAlumno;
+        private System.Windows.Forms.Button btnEliminarAlumno;
+        private System.Windows.Forms.Button btnModificarAlumno;
+        private System.Windows.Forms.Button btnNuevoAlumno;
+        private System.Windows.Forms.GroupBox grbNavegacionPaciente;
+        private System.Windows.Forms.Label lblRegistroPaciente;
+        private System.Windows.Forms.Button btnUltimoAlumno;
+        private System.Windows.Forms.Button btnSiguienteAlumno;
+        private System.Windows.Forms.Button btnAnteriorAlumno;
+        private System.Windows.Forms.Button btnPrimeroPaciente;
     }
 }
