@@ -69,11 +69,29 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>db_clinicaDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DocumentaciónClínica.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DocumentaciónClínica.Designer.cs">
+      <DependentUpon>DocumentaciónClínica.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GestionEmpleados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GestionEmpleados.Designer.cs">
+      <DependentUpon>GestionEmpleados.cs</DependentUpon>
+    </Compile>
     <Compile Include="GestionPacientes.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GestionPacientes.Designer.cs">
       <DependentUpon>GestionPacientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Inventario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Inventario.Designer.cs">
+      <DependentUpon>Inventario.cs</DependentUpon>
     </Compile>
     <Compile Include="Principal.cs">
       <SubType>Form</SubType>
@@ -83,6 +101,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ResultadoDeAnalisis.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ResultadoDeAnalisis.Designer.cs">
+      <DependentUpon>ResultadoDeAnalisis.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="GestionPacientes.resx">
       <DependentUpon>GestionPacientes.cs</DependentUpon>
     </EmbeddedResource>

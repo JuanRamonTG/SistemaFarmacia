@@ -52,7 +52,8 @@
             this.aplicacionesToolStripMenuItem});
             this.mnxSistema.Location = new System.Drawing.Point(0, 0);
             this.mnxSistema.Name = "mnxSistema";
-            this.mnxSistema.Size = new System.Drawing.Size(817, 24);
+            this.mnxSistema.Padding = new System.Windows.Forms.Padding(5, 3, 0, 3);
+            this.mnxSistema.Size = new System.Drawing.Size(681, 25);
             this.mnxSistema.TabIndex = 2;
             this.mnxSistema.Text = "menuStrip1";
             // 
@@ -132,15 +133,16 @@
             // 
             this.AccessibleDescription = "";
             this.AccessibleName = "";
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 11F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(5F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.CadetBlue;
-            this.ClientSize = new System.Drawing.Size(817, 376);
+            this.ClientSize = new System.Drawing.Size(681, 513);
             this.Controls.Add(this.mnxSistema);
-            this.Font = new System.Drawing.Font("Mocking Bird", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Font = new System.Drawing.Font("Arial Narrow", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.mnxSistema;
+            this.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
             this.Name = "Principal";
             this.Text = "SISTEMA CLINICO ";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;

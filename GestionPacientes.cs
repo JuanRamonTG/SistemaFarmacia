@@ -16,5 +16,25 @@ namespace SistemaFarmacia
         {
             InitializeComponent();
         }
+
+        private void gestionPacientesBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        {
+            this.Validate();
+            this.gestionPacientesBindingSource.EndEdit();
+            this.tableAdapterManager.UpdateAll(this.db_clinicaDataSet);
+
+        }
+
+        private void GestionPacientes_Load(object sender, EventArgs e)
+        {
+            // TODO: esta línea de código carga datos en la tabla 'db_clinicaDataSet.GestionPacientes' Puede moverla o quitarla según sea necesario.
+            this.gestionPacientesTableAdapter.Fill(this.db_clinicaDataSet.GestionPacientes);
+
+        }
+
+        private void txtNombrePaciente_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
