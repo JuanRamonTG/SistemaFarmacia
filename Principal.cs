@@ -56,5 +56,13 @@ namespace SistemaFarmacia
             objDocumentaciónClínica.MdiParent = this;
             objDocumentaciónClínica.Show();
         }
+
+        private void inicio_Click(object sender, EventArgs e)
+        {
+            inicio objinicio = new inicio();
+            objinicio.MdiParent = this;
+            objinicio.Show();
+        }
     }
+    
 }

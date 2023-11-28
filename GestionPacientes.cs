@@ -59,10 +59,27 @@ namespace SistemaFarmacia
             }
             catch (Exception e)
             {
-                erpPacientes.SetError(txtBuscarPacientes, "Por favor ingrese un codigo o nombre del estudiante a buscr");
+                erpPacientes.SetError(txtBuscarPacientes, "Por favor ingrese un codigo o nombre del estudiante a buscar");
             }
         }
 
+        private void mostrarDatosPacientes()
+        {
+            if (miTabla.Rows.Count > 0)
+            {
+                txtCodigoPaciente.Text = miTabla.Rows[posicion].ItemArray[1].ToString();
+                txtNombrePaciente.Text = miTabla.Rows[posicion].ItemArray[2].ToString();
+                txtDireccionPaciente.Text = miTabla.Rows[posicion].ItemArray[3].ToString();
+                txtTelefonoPaciente.Text = miTabla.Rows[posicion].ItemArray[4].ToString();
+
+                lblRegistroPaciente.Text = (posicion + 1) + " de " + miTabla.Rows.Count;
+            }
+            else
+            {
+                limpiarCajas();
+            }
+
+        }
 
 
         private void estadoControles(Boolean estado)

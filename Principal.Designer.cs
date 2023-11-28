@@ -38,8 +38,10 @@
             this.ResultadoDeAnalisisToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.InventarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.DocumentaciónClínicaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.db_clinicaDataSet = new SistemaFarmacia.db_clinicaDataSet();
             this.dbclinicaDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.inicio = new System.Windows.Forms.ToolStripMenuItem();
             this.mnxSistema.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.db_clinicaDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dbclinicaDataSetBindingSource)).BeginInit();
@@ -60,15 +62,16 @@
             // archivoToolStripMenuItem
             // 
             this.archivoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.cerrarToolStripMenuItem});
+            this.cerrarToolStripMenuItem,
+            this.inicio});
             this.archivoToolStripMenuItem.Name = "archivoToolStripMenuItem";
-            this.archivoToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
+            this.archivoToolStripMenuItem.Size = new System.Drawing.Size(60, 19);
             this.archivoToolStripMenuItem.Text = "Archivo";
             // 
             // cerrarToolStripMenuItem
             // 
             this.cerrarToolStripMenuItem.Name = "cerrarToolStripMenuItem";
-            this.cerrarToolStripMenuItem.Size = new System.Drawing.Size(106, 22);
+            this.cerrarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.cerrarToolStripMenuItem.Text = "Cerrar";
             this.cerrarToolStripMenuItem.Click += new System.EventHandler(this.cerrarToolStripMenuItem_Click);
             // 
@@ -79,9 +82,10 @@
             this.GestionEmpleadosToolStripMenuItem,
             this.ResultadoDeAnalisisToolStripMenuItem,
             this.InventarioToolStripMenuItem,
-            this.DocumentaciónClínicaToolStripMenuItem});
+            this.DocumentaciónClínicaToolStripMenuItem,
+            this.toolStripMenuItem1});
             this.aplicacionesToolStripMenuItem.Name = "aplicacionesToolStripMenuItem";
-            this.aplicacionesToolStripMenuItem.Size = new System.Drawing.Size(89, 20);
+            this.aplicacionesToolStripMenuItem.Size = new System.Drawing.Size(89, 19);
             this.aplicacionesToolStripMenuItem.Text = "Aplicaciones ";
             // 
             // GestionPacientesToolStripMenuItem
@@ -119,6 +123,11 @@
             this.DocumentaciónClínicaToolStripMenuItem.Text = "Documentación Clínica";
             this.DocumentaciónClínicaToolStripMenuItem.Click += new System.EventHandler(this.DocumentaciónClínicaToolStripMenuItem_Click);
             // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(198, 22);
+            // 
             // db_clinicaDataSet
             // 
             this.db_clinicaDataSet.DataSetName = "db_clinicaDataSet";
@@ -128,6 +137,13 @@
             // 
             this.dbclinicaDataSetBindingSource.DataSource = this.db_clinicaDataSet;
             this.dbclinicaDataSetBindingSource.Position = 0;
+            // 
+            // inicio
+            // 
+            this.inicio.Name = "inicio";
+            this.inicio.Size = new System.Drawing.Size(180, 22);
+            this.inicio.Text = "inicio";
+            this.inicio.Click += new System.EventHandler(this.inicio_Click);
             // 
             // Principal
             // 
@@ -168,6 +184,8 @@
         private System.Windows.Forms.ToolStripMenuItem DocumentaciónClínicaToolStripMenuItem;
         private System.Windows.Forms.BindingSource dbclinicaDataSetBindingSource;
         private db_clinicaDataSet db_clinicaDataSet;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem inicio;
     }
 }
 
