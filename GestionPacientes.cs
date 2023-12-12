@@ -58,15 +58,16 @@ namespace SistemaFarmacia
             {
                 BindingSource bs = new BindingSource();
                 bs.DataSource = grdGestionPacientes.DataSource;
-                bs.Filter = opcion == 0 ? "codigo=" + valor : "Paciente like '%" + valor + "%'";
+                bs.Filter = opcion == 0 ? "codigo=" + valor : "materia like '%" + valor + "%'";
                 grdGestionPacientes.DataSource = bs;
                 erpPacientes.SetError(txtBuscarPacientes, "");
             }
             catch (Exception e)
             {
-                erpPacientes.SetError(txtBuscarPacientes, "Por favor ingrese un codigo o nombre del paciente a buscar");
+                erpPacientes.SetError(txtBuscarPacientes, "Por favor ingrese un codigo o materia a buscr");
             }
         }
+
 
         private void mostrarDatosPacientes()
         {
@@ -198,11 +199,12 @@ namespace SistemaFarmacia
             txtTelefonoPaciente.Text = "";
         }
 
-        private void txtBuscarPacientes_TextChanged(object sender, EventArgs e)
+
+        private void txtBuscarMaterias_KeyUp(object sender, KeyEventArgs e)
         {
             filtrarPacientes(txtBuscarPacientes.Text, cboOpcionBuscarPacientes.SelectedIndex);
             if (e.KeyValue == 13)
-            {//tecla enter
+            {
                 seleccionarPaciente();
             }
         }
