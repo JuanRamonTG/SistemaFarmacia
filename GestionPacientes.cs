@@ -188,7 +188,7 @@ namespace SistemaFarmacia
 
             grbNavegacionPaciente.Enabled = estado;
             btnEliminarPaciente.Enabled = estado;
-            txtBuscarPacientes.ReadOnly = !estado;
+            txtBuscarPacientes.Enabled = !estado;
         }
 
         private void limpiarCajas()

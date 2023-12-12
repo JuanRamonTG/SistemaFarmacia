@@ -373,7 +373,6 @@
             // 
             this.txtBuscarPacientes.Location = new System.Drawing.Point(619, 13);
             this.txtBuscarPacientes.Name = "txtBuscarPacientes";
-            this.txtBuscarPacientes.ReadOnly = true;
             this.txtBuscarPacientes.Size = new System.Drawing.Size(206, 20);
             this.txtBuscarPacientes.TabIndex = 21;
             // 
