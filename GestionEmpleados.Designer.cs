@@ -41,14 +41,6 @@
             this.btnUltimoPaciente = new System.Windows.Forms.Button();
             this.btnAnteriorPaciente = new System.Windows.Forms.Button();
             this.btnPrimeroPaciente = new System.Windows.Forms.Button();
-            this.lblCodigoEmpleados = new System.Windows.Forms.Label();
-            this.txtCodigoEmpleados = new System.Windows.Forms.TextBox();
-            this.lblNombreEmpleados = new System.Windows.Forms.Label();
-            this.txtNombreEmpleados = new System.Windows.Forms.TextBox();
-            this.lblDireccion = new System.Windows.Forms.Label();
-            this.txtDireccionEmpleados = new System.Windows.Forms.TextBox();
-            this.lblTelefono = new System.Windows.Forms.Label();
-            this.txtTelefonoEmpleados = new System.Windows.Forms.TextBox();
             this.grbDatosGestionPacientes = new System.Windows.Forms.GroupBox();
             this.db_clinicaDataSet = new SistemaFarmacia.db_clinicaDataSet();
             this.gestionPacientesBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -62,8 +54,15 @@
             this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.direccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dtFechaEmpleado = new System.Windows.Forms.DateTimePicker();
+            this.lblFechaEmpleado = new System.Windows.Forms.Label();
+            this.lblAlumnoEmpleado = new System.Windows.Forms.Label();
+            this.lblPeriodoEmpleado = new System.Windows.Forms.Label();
+            this.cboAlumnoEmpleado = new System.Windows.Forms.ComboBox();
+            this.cboPeriodoEmpleado = new System.Windows.Forms.ComboBox();
             this.grbEdicionPaciente.SuspendLayout();
             this.grbNavegacionPaciente.SuspendLayout();
+            this.grbDatosGestionPacientes.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.db_clinicaDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gestionPacientesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gestionEmpleadosBindingSource)).BeginInit();
@@ -193,79 +192,17 @@
             this.btnPrimeroPaciente.Text = "|<";
             this.btnPrimeroPaciente.UseVisualStyleBackColor = true;
             // 
-            // lblCodigoEmpleados
-            // 
-            this.lblCodigoEmpleados.AutoSize = true;
-            this.lblCodigoEmpleados.Location = new System.Drawing.Point(73, 93);
-            this.lblCodigoEmpleados.Name = "lblCodigoEmpleados";
-            this.lblCodigoEmpleados.Size = new System.Drawing.Size(42, 13);
-            this.lblCodigoEmpleados.TabIndex = 23;
-            this.lblCodigoEmpleados.Text = "codigo:";
-            // 
-            // txtCodigoEmpleados
-            // 
-            this.txtCodigoEmpleados.Location = new System.Drawing.Point(147, 90);
-            this.txtCodigoEmpleados.Name = "txtCodigoEmpleados";
-            this.txtCodigoEmpleados.ReadOnly = true;
-            this.txtCodigoEmpleados.Size = new System.Drawing.Size(90, 20);
-            this.txtCodigoEmpleados.TabIndex = 24;
-            // 
-            // lblNombreEmpleados
-            // 
-            this.lblNombreEmpleados.AutoSize = true;
-            this.lblNombreEmpleados.Location = new System.Drawing.Point(73, 132);
-            this.lblNombreEmpleados.Name = "lblNombreEmpleados";
-            this.lblNombreEmpleados.Size = new System.Drawing.Size(45, 13);
-            this.lblNombreEmpleados.TabIndex = 25;
-            this.lblNombreEmpleados.Text = "nombre:";
-            // 
-            // txtNombreEmpleados
-            // 
-            this.txtNombreEmpleados.Location = new System.Drawing.Point(147, 129);
-            this.txtNombreEmpleados.Name = "txtNombreEmpleados";
-            this.txtNombreEmpleados.ReadOnly = true;
-            this.txtNombreEmpleados.Size = new System.Drawing.Size(174, 20);
-            this.txtNombreEmpleados.TabIndex = 26;
-            // 
-            // lblDireccion
-            // 
-            this.lblDireccion.AutoSize = true;
-            this.lblDireccion.Location = new System.Drawing.Point(73, 170);
-            this.lblDireccion.Name = "lblDireccion";
-            this.lblDireccion.Size = new System.Drawing.Size(53, 13);
-            this.lblDireccion.TabIndex = 27;
-            this.lblDireccion.Text = "direccion:";
-            // 
-            // txtDireccionEmpleados
-            // 
-            this.txtDireccionEmpleados.Location = new System.Drawing.Point(147, 167);
-            this.txtDireccionEmpleados.Name = "txtDireccionEmpleados";
-            this.txtDireccionEmpleados.ReadOnly = true;
-            this.txtDireccionEmpleados.Size = new System.Drawing.Size(184, 20);
-            this.txtDireccionEmpleados.TabIndex = 28;
-            // 
-            // lblTelefono
-            // 
-            this.lblTelefono.AutoSize = true;
-            this.lblTelefono.Location = new System.Drawing.Point(73, 216);
-            this.lblTelefono.Name = "lblTelefono";
-            this.lblTelefono.Size = new System.Drawing.Size(48, 13);
-            this.lblTelefono.TabIndex = 29;
-            this.lblTelefono.Text = "telefono:";
-            // 
-            // txtTelefonoEmpleados
-            // 
-            this.txtTelefonoEmpleados.Location = new System.Drawing.Point(147, 213);
-            this.txtTelefonoEmpleados.Name = "txtTelefonoEmpleados";
-            this.txtTelefonoEmpleados.ReadOnly = true;
-            this.txtTelefonoEmpleados.Size = new System.Drawing.Size(123, 20);
-            this.txtTelefonoEmpleados.TabIndex = 30;
-            // 
             // grbDatosGestionPacientes
             // 
-            this.grbDatosGestionPacientes.Location = new System.Drawing.Point(30, 53);
+            this.grbDatosGestionPacientes.Controls.Add(this.dtFechaEmpleado);
+            this.grbDatosGestionPacientes.Controls.Add(this.lblFechaEmpleado);
+            this.grbDatosGestionPacientes.Controls.Add(this.lblAlumnoEmpleado);
+            this.grbDatosGestionPacientes.Controls.Add(this.lblPeriodoEmpleado);
+            this.grbDatosGestionPacientes.Controls.Add(this.cboAlumnoEmpleado);
+            this.grbDatosGestionPacientes.Controls.Add(this.cboPeriodoEmpleado);
+            this.grbDatosGestionPacientes.Location = new System.Drawing.Point(12, 80);
             this.grbDatosGestionPacientes.Name = "grbDatosGestionPacientes";
-            this.grbDatosGestionPacientes.Size = new System.Drawing.Size(330, 216);
+            this.grbDatosGestionPacientes.Size = new System.Drawing.Size(330, 206);
             this.grbDatosGestionPacientes.TabIndex = 31;
             this.grbDatosGestionPacientes.TabStop = false;
             this.grbDatosGestionPacientes.Text = "Datos";
@@ -347,6 +284,65 @@
             this.telefono.HeaderText = "TELEFONO";
             this.telefono.Name = "telefono";
             // 
+            // dtFechaEmpleado
+            // 
+            this.dtFechaEmpleado.Enabled = false;
+            this.dtFechaEmpleado.Location = new System.Drawing.Point(80, 153);
+            this.dtFechaEmpleado.Name = "dtFechaEmpleado";
+            this.dtFechaEmpleado.Size = new System.Drawing.Size(223, 20);
+            this.dtFechaEmpleado.TabIndex = 11;
+            // 
+            // lblFechaEmpleado
+            // 
+            this.lblFechaEmpleado.AutoSize = true;
+            this.lblFechaEmpleado.Location = new System.Drawing.Point(28, 153);
+            this.lblFechaEmpleado.Name = "lblFechaEmpleado";
+            this.lblFechaEmpleado.Size = new System.Drawing.Size(40, 13);
+            this.lblFechaEmpleado.TabIndex = 10;
+            this.lblFechaEmpleado.Text = "Fecha:";
+            // 
+            // lblAlumnoEmpleado
+            // 
+            this.lblAlumnoEmpleado.AutoSize = true;
+            this.lblAlumnoEmpleado.Location = new System.Drawing.Point(28, 93);
+            this.lblAlumnoEmpleado.Name = "lblAlumnoEmpleado";
+            this.lblAlumnoEmpleado.Size = new System.Drawing.Size(57, 13);
+            this.lblAlumnoEmpleado.TabIndex = 9;
+            this.lblAlumnoEmpleado.Text = "Empleado:";
+            // 
+            // lblPeriodoEmpleado
+            // 
+            this.lblPeriodoEmpleado.AutoSize = true;
+            this.lblPeriodoEmpleado.Location = new System.Drawing.Point(28, 37);
+            this.lblPeriodoEmpleado.Name = "lblPeriodoEmpleado";
+            this.lblPeriodoEmpleado.Size = new System.Drawing.Size(46, 13);
+            this.lblPeriodoEmpleado.TabIndex = 8;
+            this.lblPeriodoEmpleado.Text = "Periodo:";
+            // 
+            // cboAlumnoEmpleado
+            // 
+            this.cboAlumnoEmpleado.DisplayMember = "nombre";
+            this.cboAlumnoEmpleado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboAlumnoEmpleado.Enabled = false;
+            this.cboAlumnoEmpleado.FormattingEnabled = true;
+            this.cboAlumnoEmpleado.Location = new System.Drawing.Point(80, 93);
+            this.cboAlumnoEmpleado.Name = "cboAlumnoEmpleado";
+            this.cboAlumnoEmpleado.Size = new System.Drawing.Size(223, 21);
+            this.cboAlumnoEmpleado.TabIndex = 7;
+            this.cboAlumnoEmpleado.ValueMember = "idAlumno";
+            // 
+            // cboPeriodoEmpleado
+            // 
+            this.cboPeriodoEmpleado.DisplayMember = "periodo";
+            this.cboPeriodoEmpleado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboPeriodoEmpleado.Enabled = false;
+            this.cboPeriodoEmpleado.FormattingEnabled = true;
+            this.cboPeriodoEmpleado.Location = new System.Drawing.Point(80, 34);
+            this.cboPeriodoEmpleado.Name = "cboPeriodoEmpleado";
+            this.cboPeriodoEmpleado.Size = new System.Drawing.Size(223, 21);
+            this.cboPeriodoEmpleado.TabIndex = 6;
+            this.cboPeriodoEmpleado.ValueMember = "idPeriodo";
+            // 
             // GestionEmpleados
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -357,14 +353,6 @@
             this.Controls.Add(this.lblBuscarPacientes);
             this.Controls.Add(this.grbEdicionPaciente);
             this.Controls.Add(this.grbNavegacionPaciente);
-            this.Controls.Add(this.lblCodigoEmpleados);
-            this.Controls.Add(this.txtCodigoEmpleados);
-            this.Controls.Add(this.lblNombreEmpleados);
-            this.Controls.Add(this.txtNombreEmpleados);
-            this.Controls.Add(this.lblDireccion);
-            this.Controls.Add(this.txtDireccionEmpleados);
-            this.Controls.Add(this.lblTelefono);
-            this.Controls.Add(this.txtTelefonoEmpleados);
             this.Controls.Add(this.grbDatosGestionPacientes);
             this.Name = "GestionEmpleados";
             this.Text = "GestionEmpleados";
@@ -372,6 +360,8 @@
             this.grbEdicionPaciente.ResumeLayout(false);
             this.grbNavegacionPaciente.ResumeLayout(false);
             this.grbNavegacionPaciente.PerformLayout();
+            this.grbDatosGestionPacientes.ResumeLayout(false);
+            this.grbDatosGestionPacientes.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.db_clinicaDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gestionPacientesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gestionEmpleadosBindingSource)).EndInit();
@@ -395,14 +385,6 @@
         private System.Windows.Forms.Button btnUltimoPaciente;
         private System.Windows.Forms.Button btnAnteriorPaciente;
         private System.Windows.Forms.Button btnPrimeroPaciente;
-        private System.Windows.Forms.Label lblCodigoEmpleados;
-        private System.Windows.Forms.TextBox txtCodigoEmpleados;
-        private System.Windows.Forms.Label lblNombreEmpleados;
-        private System.Windows.Forms.TextBox txtNombreEmpleados;
-        private System.Windows.Forms.Label lblDireccion;
-        private System.Windows.Forms.TextBox txtDireccionEmpleados;
-        private System.Windows.Forms.Label lblTelefono;
-        private System.Windows.Forms.TextBox txtTelefonoEmpleados;
         private System.Windows.Forms.GroupBox grbDatosGestionPacientes;
         private db_clinicaDataSet db_clinicaDataSet;
         private System.Windows.Forms.BindingSource gestionPacientesBindingSource;
@@ -416,5 +398,11 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn direccion;
         private System.Windows.Forms.DataGridViewTextBoxColumn telefono;
+        private System.Windows.Forms.DateTimePicker dtFechaEmpleado;
+        private System.Windows.Forms.Label lblFechaEmpleado;
+        private System.Windows.Forms.Label lblAlumnoEmpleado;
+        private System.Windows.Forms.Label lblPeriodoEmpleado;
+        private System.Windows.Forms.ComboBox cboAlumnoEmpleado;
+        private System.Windows.Forms.ComboBox cboPeriodoEmpleado;
     }
 }
