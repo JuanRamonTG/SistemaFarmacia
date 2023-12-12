@@ -26,28 +26,28 @@ namespace SistemaFarmacia
             miDs.Clear();
             eComando.Connection = aConexion;
 
-            eComando.CommandText = "select * from materias";
+            eComando.CommandText = "select * from GestionPacientes";
             iAdaptador.SelectCommand = eComando;
-            iAdaptador.Fill(miDs, "materias");
+            iAdaptador.Fill(miDs, "GestionPacientes");
 
             return miDs;
         }
-        public String mantenimientoMaterias(String[] materias)
+        public String mantenimientoMaterias(String[] GestionPacientes)
         {
             String sql = "";
-            if (materias[0] == "nuevo")
+            if (GestionPacientes[0] == "nuevo")
             {
-                sql = "INSERT INTO materias (codigo, materia, uv) VALUES('" + materias[1] + "', '" + materias[2] + "', '" +
-                    materias[3] + "')";
+                sql = "INSERT INTO GestionPacientes (codigo, materia, uv) VALUES('" + GestionPacientes[1] + "', '" + GestionPacientes[2] + "', '" +
+                    GestionPacientes[3] + "')";
             }
-            else if (materias[0] == "modificar")
+            else if (GestionPacientes[0] == "modificar")
             {
-                sql = "UPDATE materias SET codigo='" + materias[1] + "', materia='" + materias[2] + "', uv='" + materias[3] +
-                    "' WHERE idMateria='" + materias[4] + "'";
+                sql = "UPDATE GestionPacientes SET codigo='" + GestionPacientes[1] + "', materia='" + GestionPacientes[2] + "', uv='" + GestionPacientes[3] +
+                    "' WHERE idPacientes='" + GestionPacientes[4] + "'";
             }
-            else if (materias[0] == "eliminar")
+            else if (GestionPacientes[0] == "eliminar")
             {
-                sql = "DELETE FROM materias WHERE idMateria='" + materias[4] + "'";
+                sql = "DELETE FROM GestionPacientes WHERE idPacientes='" + GestionPacientes[4] + "'";
             }
             return ejecutarSql(sql);
         }
