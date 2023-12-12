@@ -58,7 +58,7 @@ namespace SistemaFarmacia
             {
                 BindingSource bs = new BindingSource();
                 bs.DataSource = grdGestionPacientes.DataSource;
-                bs.Filter = opcion == 0 ? "codigo=" + valor : "nombre like '%" + valor + "%'";
+                bs.Filter = opcion == 0 ? "codigo=" + valor : "Paciente like '%" + valor + "%'";
                 grdGestionPacientes.DataSource = bs;
                 erpPacientes.SetError(txtBuscarPacientes, "");
             }
@@ -85,12 +85,12 @@ namespace SistemaFarmacia
             }
         }
 
-            
-        
 
 
 
-        private void btnSiguientePacientes_Click(object sender, EventArgs e)
+
+
+        private void btnSiguientePacientes_Click_1(object sender, EventArgs e)
         {
             if (posicion < miTabla.Rows.Count - 1)
             {
@@ -103,13 +103,13 @@ namespace SistemaFarmacia
             }
         }
 
-        private void btnUltimoPaciente_Click(object sender, EventArgs e)
+        private void btnUltimoPaciente_Click_1(object sender, EventArgs e)
         {
             posicion = miTabla.Rows.Count - 1;
             mostrarDatosPacientes();
         }
 
-        private void btnAnteriorPaciente_Click(object sender, EventArgs e)
+        private void btnAnteriorPaciente_Click_1(object sender, EventArgs e)
         {
             if (posicion > 0)
             {
@@ -122,7 +122,7 @@ namespace SistemaFarmacia
             }
         }
 
-        private void btnPrimeroPaciente_Click(object sender, EventArgs e)
+        private void btnPrimeroPaciente_Click_1(object sender, EventArgs e)
         {
             posicion = 0;
             mostrarDatosPacientes();
@@ -275,5 +275,9 @@ namespace SistemaFarmacia
         {
 
         }
+
+        
+
+        
     }
 }

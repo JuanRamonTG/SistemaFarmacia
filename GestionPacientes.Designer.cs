@@ -55,19 +55,19 @@
             this.cboOpcionBuscarPacientes = new System.Windows.Forms.ComboBox();
             this.txtBuscarPacientes = new System.Windows.Forms.TextBox();
             this.lblBuscarPacientes = new System.Windows.Forms.Label();
-            this.erpPacientes = new System.Windows.Forms.ErrorProvider(this.components);
             this.telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.direccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idPacientes = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.grdGestionPacientes = new System.Windows.Forms.DataGridView();
+            this.erpPacientes = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.db_clinicaDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gestionPacientesBindingSource)).BeginInit();
             this.grbEdicionPaciente.SuspendLayout();
             this.grbNavegacionPaciente.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.erpPacientes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdGestionPacientes)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.erpPacientes)).BeginInit();
             this.SuspendLayout();
             // 
             // lblCodigoPaciente
@@ -241,6 +241,7 @@
             this.btnSiguientePacientes.TabIndex = 21;
             this.btnSiguientePacientes.Text = ">";
             this.btnSiguientePacientes.UseVisualStyleBackColor = true;
+            this.btnSiguientePacientes.Click += new System.EventHandler(this.btnSiguientePacientes_Click_1);
             // 
             // lblRegistroPaciente
             // 
@@ -261,6 +262,7 @@
             this.btnUltimoPaciente.TabIndex = 3;
             this.btnUltimoPaciente.Text = ">|";
             this.btnUltimoPaciente.UseVisualStyleBackColor = true;
+            this.btnUltimoPaciente.Click += new System.EventHandler(this.btnUltimoPaciente_Click_1);
             // 
             // btnAnteriorPaciente
             // 
@@ -271,6 +273,7 @@
             this.btnAnteriorPaciente.TabIndex = 1;
             this.btnAnteriorPaciente.Text = "<";
             this.btnAnteriorPaciente.UseVisualStyleBackColor = true;
+            this.btnAnteriorPaciente.Click += new System.EventHandler(this.btnAnteriorPaciente_Click_1);
             // 
             // btnPrimeroPaciente
             // 
@@ -281,6 +284,7 @@
             this.btnPrimeroPaciente.TabIndex = 0;
             this.btnPrimeroPaciente.Text = "|<";
             this.btnPrimeroPaciente.UseVisualStyleBackColor = true;
+            this.btnPrimeroPaciente.Click += new System.EventHandler(this.btnPrimeroPaciente_Click_1);
             // 
             // cboOpcionBuscarPacientes
             // 
@@ -311,10 +315,6 @@
             this.lblBuscarPacientes.Size = new System.Drawing.Size(43, 13);
             this.lblBuscarPacientes.TabIndex = 20;
             this.lblBuscarPacientes.Text = "Buscar:";
-            // 
-            // erpPacientes
-            // 
-            this.erpPacientes.ContainerControl = this;
             // 
             // telefono
             // 
@@ -373,6 +373,10 @@
             this.grdGestionPacientes.Size = new System.Drawing.Size(535, 230);
             this.grdGestionPacientes.TabIndex = 1;
             // 
+            // erpPacientes
+            // 
+            this.erpPacientes.ContainerControl = this;
+            // 
             // GestionPacientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -401,8 +405,8 @@
             this.grbEdicionPaciente.ResumeLayout(false);
             this.grbNavegacionPaciente.ResumeLayout(false);
             this.grbNavegacionPaciente.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.erpPacientes)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdGestionPacientes)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.erpPacientes)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -436,12 +440,12 @@
         private System.Windows.Forms.TextBox txtBuscarPacientes;
         private System.Windows.Forms.Label lblBuscarPacientes;
         private System.Windows.Forms.Button btnSiguientePacientes;
-        private System.Windows.Forms.ErrorProvider erpPacientes;
         private System.Windows.Forms.DataGridView grdGestionPacientes;
         private System.Windows.Forms.DataGridViewTextBoxColumn idPacientes;
         private System.Windows.Forms.DataGridViewTextBoxColumn codigo;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn direccion;
         private System.Windows.Forms.DataGridViewTextBoxColumn telefono;
+        private System.Windows.Forms.ErrorProvider erpPacientes;
     }
 }
