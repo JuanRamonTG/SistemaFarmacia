@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.txtBuscarPacientes = new System.Windows.Forms.TextBox();
             this.lblBuscarPacientes = new System.Windows.Forms.Label();
             this.cboOpcionBuscarPacientes = new System.Windows.Forms.ComboBox();
@@ -50,14 +51,31 @@
             this.lblTelefono = new System.Windows.Forms.Label();
             this.txtTelefonoPaciente = new System.Windows.Forms.TextBox();
             this.grbDatosGestionPacientes = new System.Windows.Forms.GroupBox();
+            this.db_clinicaDataSet = new SistemaFarmacia.db_clinicaDataSet();
+            this.gestionPacientesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.gestionPacientesTableAdapter = new SistemaFarmacia.db_clinicaDataSetTableAdapters.GestionPacientesTableAdapter();
+            this.tableAdapterManager = new SistemaFarmacia.db_clinicaDataSetTableAdapters.TableAdapterManager();
+            this.gestionEmpleadosTableAdapter = new SistemaFarmacia.db_clinicaDataSetTableAdapters.GestionEmpleadosTableAdapter();
+            this.gestionEmpleadosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.gestionEmpleadosDataGridView = new System.Windows.Forms.DataGridView();
+            this.idEmpleados = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.direccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.grbEdicionPaciente.SuspendLayout();
             this.grbNavegacionPaciente.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.db_clinicaDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gestionPacientesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gestionEmpleadosBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gestionEmpleadosDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // txtBuscarPacientes
             // 
             this.txtBuscarPacientes.Location = new System.Drawing.Point(603, 31);
             this.txtBuscarPacientes.Name = "txtBuscarPacientes";
+            this.txtBuscarPacientes.ReadOnly = true;
             this.txtBuscarPacientes.Size = new System.Drawing.Size(206, 20);
             this.txtBuscarPacientes.TabIndex = 36;
             // 
@@ -76,7 +94,7 @@
             this.cboOpcionBuscarPacientes.FormattingEnabled = true;
             this.cboOpcionBuscarPacientes.Items.AddRange(new object[] {
             "Codigo",
-            "Materia"});
+            "Empleados"});
             this.cboOpcionBuscarPacientes.Location = new System.Drawing.Point(434, 31);
             this.cboOpcionBuscarPacientes.Name = "cboOpcionBuscarPacientes";
             this.cboOpcionBuscarPacientes.Size = new System.Drawing.Size(163, 21);
@@ -265,11 +283,89 @@
             this.grbDatosGestionPacientes.TabStop = false;
             this.grbDatosGestionPacientes.Text = "Datos";
             // 
+            // db_clinicaDataSet
+            // 
+            this.db_clinicaDataSet.DataSetName = "db_clinicaDataSet";
+            this.db_clinicaDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // gestionPacientesBindingSource
+            // 
+            this.gestionPacientesBindingSource.DataMember = "GestionPacientes";
+            this.gestionPacientesBindingSource.DataSource = this.db_clinicaDataSet;
+            // 
+            // gestionPacientesTableAdapter
+            // 
+            this.gestionPacientesTableAdapter.ClearBeforeFill = true;
+            // 
+            // tableAdapterManager
+            // 
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.GestionEmpleadosTableAdapter = this.gestionEmpleadosTableAdapter;
+            this.tableAdapterManager.GestionPacientesTableAdapter = this.gestionPacientesTableAdapter;
+            this.tableAdapterManager.UpdateOrder = SistemaFarmacia.db_clinicaDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            // 
+            // gestionEmpleadosTableAdapter
+            // 
+            this.gestionEmpleadosTableAdapter.ClearBeforeFill = true;
+            // 
+            // gestionEmpleadosBindingSource
+            // 
+            this.gestionEmpleadosBindingSource.DataMember = "GestionEmpleados";
+            this.gestionEmpleadosBindingSource.DataSource = this.db_clinicaDataSet;
+            // 
+            // gestionEmpleadosDataGridView
+            // 
+            this.gestionEmpleadosDataGridView.AutoGenerateColumns = false;
+            this.gestionEmpleadosDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gestionEmpleadosDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idEmpleados,
+            this.codigo,
+            this.nombre,
+            this.direccion,
+            this.telefono});
+            this.gestionEmpleadosDataGridView.DataSource = this.gestionEmpleadosBindingSource;
+            this.gestionEmpleadosDataGridView.Location = new System.Drawing.Point(366, 80);
+            this.gestionEmpleadosDataGridView.Name = "gestionEmpleadosDataGridView";
+            this.gestionEmpleadosDataGridView.Size = new System.Drawing.Size(544, 220);
+            this.gestionEmpleadosDataGridView.TabIndex = 37;
+            // 
+            // idEmpleados
+            // 
+            this.idEmpleados.DataPropertyName = "idEmpleados";
+            this.idEmpleados.HeaderText = "ID";
+            this.idEmpleados.Name = "idEmpleados";
+            this.idEmpleados.ReadOnly = true;
+            // 
+            // codigo
+            // 
+            this.codigo.DataPropertyName = "codigo";
+            this.codigo.HeaderText = "CODIGO";
+            this.codigo.Name = "codigo";
+            // 
+            // nombre
+            // 
+            this.nombre.DataPropertyName = "nombre";
+            this.nombre.HeaderText = "NOMBRE";
+            this.nombre.Name = "nombre";
+            // 
+            // direccion
+            // 
+            this.direccion.DataPropertyName = "direccion";
+            this.direccion.HeaderText = "DIRECCION";
+            this.direccion.Name = "direccion";
+            // 
+            // telefono
+            // 
+            this.telefono.DataPropertyName = "telefono";
+            this.telefono.HeaderText = "TELEFONO";
+            this.telefono.Name = "telefono";
+            // 
             // GestionEmpleados
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(944, 450);
+            this.ClientSize = new System.Drawing.Size(928, 417);
+            this.Controls.Add(this.gestionEmpleadosDataGridView);
             this.Controls.Add(this.txtBuscarPacientes);
             this.Controls.Add(this.lblBuscarPacientes);
             this.Controls.Add(this.cboOpcionBuscarPacientes);
@@ -286,9 +382,14 @@
             this.Controls.Add(this.grbDatosGestionPacientes);
             this.Name = "GestionEmpleados";
             this.Text = "GestionEmpleados";
+            this.Load += new System.EventHandler(this.GestionEmpleados_Load);
             this.grbEdicionPaciente.ResumeLayout(false);
             this.grbNavegacionPaciente.ResumeLayout(false);
             this.grbNavegacionPaciente.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.db_clinicaDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gestionPacientesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gestionEmpleadosBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gestionEmpleadosDataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -318,5 +419,17 @@
         private System.Windows.Forms.Label lblTelefono;
         private System.Windows.Forms.TextBox txtTelefonoPaciente;
         private System.Windows.Forms.GroupBox grbDatosGestionPacientes;
+        private db_clinicaDataSet db_clinicaDataSet;
+        private System.Windows.Forms.BindingSource gestionPacientesBindingSource;
+        private db_clinicaDataSetTableAdapters.GestionPacientesTableAdapter gestionPacientesTableAdapter;
+        private db_clinicaDataSetTableAdapters.TableAdapterManager tableAdapterManager;
+        private db_clinicaDataSetTableAdapters.GestionEmpleadosTableAdapter gestionEmpleadosTableAdapter;
+        private System.Windows.Forms.BindingSource gestionEmpleadosBindingSource;
+        private System.Windows.Forms.DataGridView gestionEmpleadosDataGridView;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idEmpleados;
+        private System.Windows.Forms.DataGridViewTextBoxColumn codigo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn direccion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn telefono;
     }
 }

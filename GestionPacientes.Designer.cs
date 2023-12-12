@@ -123,6 +123,7 @@
             // tableAdapterManager
             // 
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.GestionEmpleadosTableAdapter = null;
             this.tableAdapterManager.GestionPacientesTableAdapter = this.gestionPacientesTableAdapter;
             this.tableAdapterManager.UpdateOrder = SistemaFarmacia.db_clinicaDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
@@ -293,7 +294,7 @@
             this.cboOpcionBuscarPacientes.FormattingEnabled = true;
             this.cboOpcionBuscarPacientes.Items.AddRange(new object[] {
             "Codigo",
-            "Materia"});
+            "Paciente"});
             this.cboOpcionBuscarPacientes.Location = new System.Drawing.Point(450, 12);
             this.cboOpcionBuscarPacientes.Name = "cboOpcionBuscarPacientes";
             this.cboOpcionBuscarPacientes.Size = new System.Drawing.Size(163, 21);
