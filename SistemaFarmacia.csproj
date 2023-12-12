@@ -123,6 +123,9 @@
     <EmbeddedResource Include="ayuda.resx">
       <DependentUpon>ayuda.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GestionEmpleados.resx">
+      <DependentUpon>GestionEmpleados.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GestionPacientes.resx">
       <DependentUpon>GestionPacientes.cs</DependentUpon>
     </EmbeddedResource>
