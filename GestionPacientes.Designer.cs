@@ -218,9 +218,9 @@
             // 
             // grbDatosGestionPacientes
             // 
-            this.grbDatosGestionPacientes.Location = new System.Drawing.Point(49, 47);
+            this.grbDatosGestionPacientes.Location = new System.Drawing.Point(46, 34);
             this.grbDatosGestionPacientes.Name = "grbDatosGestionPacientes";
-            this.grbDatosGestionPacientes.Size = new System.Drawing.Size(326, 193);
+            this.grbDatosGestionPacientes.Size = new System.Drawing.Size(330, 216);
             this.grbDatosGestionPacientes.TabIndex = 12;
             this.grbDatosGestionPacientes.TabStop = false;
             this.grbDatosGestionPacientes.Text = "Datos";

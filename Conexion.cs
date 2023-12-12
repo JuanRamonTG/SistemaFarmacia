@@ -10,29 +10,25 @@ namespace SistemaFarmacia
 {
     class Conexion
     {
-        SqlConnection miConexion = new SqlConnection(); //Conectarme a  la BD
-        SqlCommand miComando = new SqlCommand(); //ejecutar consultas SQL en la base de datos.
-        SqlDataAdapter miAdaptador = new SqlDataAdapter(); //Sirve como un intermediario entre la BD y la aplicacion.
-        DataSet miDs = new DataSet(); //Es una representacion grafica de la BD en memoria.
+        SqlConnection aConexion = new SqlConnection(); //Conecta la base
+        SqlCommand eComando = new SqlCommand(); //ejecutar consultas SQL en la base de datos.
+        SqlDataAdapter iAdaptador = new SqlDataAdapter(); //Sirve como un intermediario entre la BD y la aplicacion.
+        DataSet miDs = new DataSet(); //Es un contenedor en memoria.
 
         public Conexion()
         {
-            String cadenaConexion = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\db_academico.mdf;Integrated Security=True";
-            miConexion.ConnectionString = cadenaConexion;
-            miConexion.Open();
+            String caConexion = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\db_clinica.mdf;Integrated Security=True";
+            aConexion.ConnectionString = caConexion;
+            aConexion.Open();
         }
         public DataSet obtenerDatos()
         {
             miDs.Clear();
-            miComando.Connection = miConexion;
+            eComando.Connection = aConexion;
 
-            miComando.CommandText = "select * from materias";
-            miAdaptador.SelectCommand = miComando;
-            miAdaptador.Fill(miDs, "materias");
-
-            miComando.CommandText = "select * from alumnos";
-            miAdaptador.SelectCommand = miComando;
-            miAdaptador.Fill(miDs, "alumnos");
+            eComando.CommandText = "select * from materias";
+            iAdaptador.SelectCommand = eComando;
+            iAdaptador.Fill(miDs, "materias");
 
             return miDs;
         }
@@ -55,32 +51,14 @@ namespace SistemaFarmacia
             }
             return ejecutarSql(sql);
         }
-        public String mantenimientoAlumnos(String[] GestionPacientes)
-        {
-            String sql = "";
-            if (GestionPacientes[0] == "nuevo")
-            {
-                sql = "INSERT INTO alumnos (codigo, nombre, direccion, telefono) VALUES('" + GestionPacientes[1] + "', '" + GestionPacientes[2] + "', '" +
-                    GestionPacientes[3] + "', '" + GestionPacientes[4] + "')";
-            }
-            else if (GestionPacientes[0] == "modificar")
-            {
-                sql = "UPDATE alumnos SET codigo='" + GestionPacientes[1] + "', nombre='" + GestionPacientes[2] + "', direccion='" + GestionPacientes[3] +
-                    "', telefono='" + GestionPacientes[4] + "' WHERE idAlumno='" + GestionPacientes[5] + "'";
-            }
-            else if (GestionPacientes[0] == "eliminar")
-            {
-                sql = "DELETE FROM alumnos WHERE idAlumno='" + GestionPacientes[5] + "'";
-            }
-            return ejecutarSql(sql);
-        }
+        
         private string ejecutarSql(String sql)
         {
             try
             {
-                miComando.CommandText = sql;
-                miComando.Connection = miConexion;
-                return miComando.ExecuteNonQuery().ToString();
+                eComando.CommandText = sql;
+                eComando.Connection = aConexion;
+                return eComando.ExecuteNonQuery().ToString();
             }
             catch (Exception e)
             {
