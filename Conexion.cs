@@ -32,7 +32,7 @@ namespace SistemaFarmacia
 
             return miDs;
         }
-        public String mantenimientoMaterias(String[] GestionPacientes)
+        public String mantenimientoPaciente(String[] GestionPacientes)
         {
             String sql = "";
             if (GestionPacientes[0] == "nuevo")

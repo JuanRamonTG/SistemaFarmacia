@@ -15,6 +15,15 @@ namespace SistemaFarmacia
         Conexion objConexion = new Conexion();
         DataSet miDs = new DataSet();
         DataTable miTabla = new DataTable();
+
+
+
+
+        public int _idMateria = 0;
+        public String _codigo = "";
+        public String _materia = "";
+        public int _uv = 0;
+
         public int posicion = 0;
         String accion = "nuevo";
         public GestionPacientes()
@@ -130,25 +139,44 @@ namespace SistemaFarmacia
             }
             else
             {//Guardar
-                String[] materias = new string[] {
-                    accion,txtCodigoMateria.Text, txtNombreMateria.Text, txtUvMateria.Text,
+                String[] GestionPacientes = new string[] {
+                    accion,txtCodigoPaciente.Text, txtNombrePaciente.Text, txtDireccionPaciente.Text,txtTelefonoPaciente.Text,
                     miTabla.Rows[posicion].ItemArray[0].ToString()
                 };
-                String msg = objConexion.mantenimientoMaterias(materias);
+                String msg = objConexion.mantenimientoPaciente(GestionPacientes);
                 if (msg != "1")
                 {
-                    MessageBox.Show("Error en el registro de materias: " + msg, "Registro de Materias.", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Error en el registro de Paciente: " + msg, "Registro de Pacientes.", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else
                 {
-                    actualizarDsMaterias();
+                    actualizarDsPacientes();
                     estadoControles(true);
-                    btnNuevoMateria.Text = "Nuevo";
-                    btnModificarMateria.Text = "Modificar";
+                    btnNuevoPaciente.Text = "Nuevo";
+                    btnModificarPaciente.Text = "Modificar";
                 }
             }
         }
 
+
+        private void btnModificarMateria_Click(object sender, EventArgs e)
+        {
+            if (btnModificarPaciente.Text == "Modificar")
+            {
+                btnNuevoPaciente.Text = "Guardar";
+                btnModificarPaciente.Text = "Cancelar";
+                estadoControles(false);
+                accion = "modificar";
+            }
+            else
+            {
+
+                estadoControles(true);
+                mostrarDatosPacientes();
+                btnNuevoPaciente.Text = "Nuevo";
+                btnModificarPaciente.Text = "Modificar";
+            }
+        }
         private void estadoControles(Boolean estado)
         {
             txtCodigoPaciente.ReadOnly = estado;
@@ -169,8 +197,52 @@ namespace SistemaFarmacia
             txtTelefonoPaciente.Text = "";
         }
 
-        
-        
+        private void txtBuscarMaterias_KeyUp(object sender, KeyEventArgs e)
+        {
+            filtrarPacientes(txtBuscarPacientes.Text, cboOpcionBuscarPacientes.SelectedIndex);
+            if (e.KeyValue == 13)
+            {//tecla enter
+                seleccionarPaciente();
+            }
+        }
+        private void seleccionarPaciente()
+        {
+            _idMateria = int.Parse(grdGestionPacientes.CurrentRow.Cells["idMateria"].Value.ToString());
+            _codigo = grdGestionPacientes.CurrentRow.Cells["codigo"].Value.ToString();
+            _materia = grdGestionPacientes.CurrentRow.Cells["nombre"].Value.ToString();
+            _uv = int.Parse(grdGestionPacientes.CurrentRow.Cells["uv"].Value.ToString());
+
+            posicion = miTabla.Rows.IndexOf(miTabla.Rows.Find(_idMateria.ToString()));
+            mostrarDatosPacientes();
+        }
+
+        private void grdDatosPaciente_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            seleccionarPaciente();
+        }
+
+        private void btnEliminarMateria_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Esta seguro de eliminar a " + txtCodigoPaciente.Text, "Paciente Eliminado",
+                MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                String[] GestionPacientes = new string[] {
+                    "eliminar",txtNombrePaciente.Text, txtDireccionPaciente.Text, txtTelefonoPaciente.Text,
+                    miTabla.Rows[posicion].ItemArray[0].ToString()
+                };
+                String msg = objConexion.mantenimientoPaciente(GestionPacientes);
+                if (msg != "1")
+                {
+                    MessageBox.Show("Error en la eliminacion de materias: " + msg, "Registro de Materias.", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    posicion = 0;
+                    actualizarDsPacientes();
+                }
+            }
+        }
+
 
 
         private void txtNombrePaciente_TextChanged(object sender, EventArgs e)
@@ -201,6 +273,11 @@ namespace SistemaFarmacia
         }
 
         private void txtBuscarPacientes_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtCodigoPaciente_TextChanged(object sender, EventArgs e)
         {
 
         }

@@ -191,6 +191,7 @@
             this.txtCodigoPaciente.ReadOnly = true;
             this.txtCodigoPaciente.Size = new System.Drawing.Size(90, 20);
             this.txtCodigoPaciente.TabIndex = 5;
+            this.txtCodigoPaciente.TextChanged += new System.EventHandler(this.txtCodigoPaciente_TextChanged);
             // 
             // txtNombrePaciente
             // 
