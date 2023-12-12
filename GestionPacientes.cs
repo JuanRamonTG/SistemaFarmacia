@@ -26,7 +26,6 @@ namespace SistemaFarmacia
         private void GestionPacientes_Load(object sender, EventArgs e)
         {
 
-            this.gestionPacientesTableAdapter.Fill(this.db_clinicaDataSet.GestionPacientes);
             actualizarDsPacientes();
             cboOpcionBuscarPacientes.SelectedIndex = 1;
         }
@@ -35,8 +34,8 @@ namespace SistemaFarmacia
         {
             miDs.Clear();
             miDs = objConexion.obtenerDatos();
-            miTabla = miDs.Tables["alumnos"];
-            miTabla.PrimaryKey = new DataColumn[] { miTabla.Columns["idPaciente"] };
+            miTabla = miDs.Tables["GestionPacientes"];
+            miTabla.PrimaryKey = new DataColumn[] { miTabla.Columns["idPacientes"] };
             mostrarPacientes();
             mostrarDatosPacientes();
         }
@@ -47,7 +46,7 @@ namespace SistemaFarmacia
             grdGestionPacientes.DataSource = miTabla.DefaultView;
         }
 
-        private void filtrarAlumnos(String valor, int opcion)
+        private void filtrarPacientes(String valor, int opcion)
         {
             try
             {
@@ -59,7 +58,7 @@ namespace SistemaFarmacia
             }
             catch (Exception e)
             {
-                erpPacientes.SetError(txtBuscarPacientes, "Por favor ingrese un codigo o nombre del estudiante a buscar");
+                erpPacientes.SetError(txtBuscarPacientes, "Por favor ingrese un codigo o nombre del paciente a buscar");
             }
         }
 

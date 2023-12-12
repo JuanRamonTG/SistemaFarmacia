@@ -37,13 +37,13 @@ namespace SistemaFarmacia
             String sql = "";
             if (GestionPacientes[0] == "nuevo")
             {
-                sql = "INSERT INTO GestionPacientes (codigo, materia, uv) VALUES('" + GestionPacientes[1] + "', '" + GestionPacientes[2] + "', '" +
-                    GestionPacientes[3] + "')";
+                sql = "INSERT INTO GestionPacientes (codigo, nombre, direccion, telefono) VALUES('" + GestionPacientes[1] + "', '" + GestionPacientes[2] + "', '" + GestionPacientes[3] + "', '" +
+                    GestionPacientes[4] + "')";
             }
             else if (GestionPacientes[0] == "modificar")
             {
-                sql = "UPDATE GestionPacientes SET codigo='" + GestionPacientes[1] + "', materia='" + GestionPacientes[2] + "', uv='" + GestionPacientes[3] +
-                    "' WHERE idPacientes='" + GestionPacientes[4] + "'";
+                sql = "UPDATE GestionPacientes SET codigo='" + GestionPacientes[1] + "', nombre='" + GestionPacientes[2] + "', direccion='" + GestionPacientes[3] + "', telefono='" + GestionPacientes[4] +
+                    "' WHERE idPacientes='" + GestionPacientes[5] + "'";
             }
             else if (GestionPacientes[0] == "eliminar")
             {
