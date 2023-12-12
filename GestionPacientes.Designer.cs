@@ -54,14 +54,14 @@
             this.btnPrimeroPaciente = new System.Windows.Forms.Button();
             this.cboOpcionBuscarPacientes = new System.Windows.Forms.ComboBox();
             this.lblBuscarPacientes = new System.Windows.Forms.Label();
+            this.grdGestionPacientes = new System.Windows.Forms.DataGridView();
+            this.erpPacientes = new System.Windows.Forms.ErrorProvider(this.components);
+            this.txtBuscarPacientes = new System.Windows.Forms.TextBox();
             this.telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.direccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idPacientes = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.grdGestionPacientes = new System.Windows.Forms.DataGridView();
-            this.erpPacientes = new System.Windows.Forms.ErrorProvider(this.components);
-            this.txtBuscarPacientes = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.db_clinicaDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gestionPacientesBindingSource)).BeginInit();
             this.grbEdicionPaciente.SuspendLayout();
@@ -190,9 +190,9 @@
             // 
             this.btnEliminarPaciente.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEliminarPaciente.ForeColor = System.Drawing.Color.LightCoral;
-            this.btnEliminarPaciente.Location = new System.Drawing.Point(192, 33);
+            this.btnEliminarPaciente.Location = new System.Drawing.Point(206, 33);
             this.btnEliminarPaciente.Name = "btnEliminarPaciente";
-            this.btnEliminarPaciente.Size = new System.Drawing.Size(70, 27);
+            this.btnEliminarPaciente.Size = new System.Drawing.Size(76, 27);
             this.btnEliminarPaciente.TabIndex = 9;
             this.btnEliminarPaciente.Text = "Eliminar";
             this.btnEliminarPaciente.UseVisualStyleBackColor = true;
@@ -203,7 +203,7 @@
             this.btnModificarPaciente.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnModificarPaciente.Location = new System.Drawing.Point(95, 33);
             this.btnModificarPaciente.Name = "btnModificarPaciente";
-            this.btnModificarPaciente.Size = new System.Drawing.Size(80, 27);
+            this.btnModificarPaciente.Size = new System.Drawing.Size(96, 27);
             this.btnModificarPaciente.TabIndex = 8;
             this.btnModificarPaciente.Text = "Modificar";
             this.btnModificarPaciente.UseVisualStyleBackColor = true;
@@ -309,6 +309,38 @@
             this.lblBuscarPacientes.TabIndex = 20;
             this.lblBuscarPacientes.Text = "Buscar:";
             // 
+            // grdGestionPacientes
+            // 
+            this.grdGestionPacientes.AllowUserToAddRows = false;
+            this.grdGestionPacientes.AllowUserToDeleteRows = false;
+            this.grdGestionPacientes.AutoGenerateColumns = false;
+            this.grdGestionPacientes.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
+            this.grdGestionPacientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grdGestionPacientes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idPacientes,
+            this.codigo,
+            this.nombre,
+            this.direccion,
+            this.telefono});
+            this.grdGestionPacientes.DataSource = this.gestionPacientesBindingSource;
+            this.grdGestionPacientes.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.grdGestionPacientes.Location = new System.Drawing.Point(382, 47);
+            this.grdGestionPacientes.Name = "grdGestionPacientes";
+            this.grdGestionPacientes.ReadOnly = true;
+            this.grdGestionPacientes.Size = new System.Drawing.Size(535, 230);
+            this.grdGestionPacientes.TabIndex = 1;
+            // 
+            // erpPacientes
+            // 
+            this.erpPacientes.ContainerControl = this;
+            // 
+            // txtBuscarPacientes
+            // 
+            this.txtBuscarPacientes.Location = new System.Drawing.Point(619, 13);
+            this.txtBuscarPacientes.Name = "txtBuscarPacientes";
+            this.txtBuscarPacientes.Size = new System.Drawing.Size(206, 20);
+            this.txtBuscarPacientes.TabIndex = 21;
+            // 
             // telefono
             // 
             this.telefono.DataPropertyName = "telefono";
@@ -344,38 +376,6 @@
             this.idPacientes.Name = "idPacientes";
             this.idPacientes.ReadOnly = true;
             this.idPacientes.Visible = false;
-            // 
-            // grdGestionPacientes
-            // 
-            this.grdGestionPacientes.AllowUserToAddRows = false;
-            this.grdGestionPacientes.AllowUserToDeleteRows = false;
-            this.grdGestionPacientes.AutoGenerateColumns = false;
-            this.grdGestionPacientes.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
-            this.grdGestionPacientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.grdGestionPacientes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idPacientes,
-            this.codigo,
-            this.nombre,
-            this.direccion,
-            this.telefono});
-            this.grdGestionPacientes.DataSource = this.gestionPacientesBindingSource;
-            this.grdGestionPacientes.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.grdGestionPacientes.Location = new System.Drawing.Point(382, 47);
-            this.grdGestionPacientes.Name = "grdGestionPacientes";
-            this.grdGestionPacientes.ReadOnly = true;
-            this.grdGestionPacientes.Size = new System.Drawing.Size(535, 230);
-            this.grdGestionPacientes.TabIndex = 1;
-            // 
-            // erpPacientes
-            // 
-            this.erpPacientes.ContainerControl = this;
-            // 
-            // txtBuscarPacientes
-            // 
-            this.txtBuscarPacientes.Location = new System.Drawing.Point(619, 13);
-            this.txtBuscarPacientes.Name = "txtBuscarPacientes";
-            this.txtBuscarPacientes.Size = new System.Drawing.Size(206, 20);
-            this.txtBuscarPacientes.TabIndex = 21;
             // 
             // GestionPacientes
             // 
@@ -440,12 +440,12 @@
         private System.Windows.Forms.Label lblBuscarPacientes;
         private System.Windows.Forms.Button btnSiguientePacientes;
         private System.Windows.Forms.DataGridView grdGestionPacientes;
+        private System.Windows.Forms.ErrorProvider erpPacientes;
+        private System.Windows.Forms.TextBox txtBuscarPacientes;
         private System.Windows.Forms.DataGridViewTextBoxColumn idPacientes;
         private System.Windows.Forms.DataGridViewTextBoxColumn codigo;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn direccion;
         private System.Windows.Forms.DataGridViewTextBoxColumn telefono;
-        private System.Windows.Forms.ErrorProvider erpPacientes;
-        private System.Windows.Forms.TextBox txtBuscarPacientes;
     }
 }

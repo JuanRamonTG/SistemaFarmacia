@@ -72,7 +72,7 @@ namespace SistemaFarmacia
 
         private void mostrarDatosPacientes()
         {
-            if (miTabla.Rows.Count > 0 && posicion >= 0 && posicion < miTabla.Rows.Count)
+            if (miTabla.Rows.Count > 0)
             {
                 txtCodigoPaciente.Text = miTabla.Rows[posicion].ItemArray[1].ToString();
                 txtNombrePaciente.Text = miTabla.Rows[posicion].ItemArray[2].ToString();
