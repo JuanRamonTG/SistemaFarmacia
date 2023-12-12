@@ -80,6 +80,74 @@ namespace SistemaFarmacia
 
         }
 
+        private void btnSiguientePacientes_Click(object sender, EventArgs e)
+        {
+            if (posicion < miTabla.Rows.Count - 1)
+            {
+                posicion++;
+                mostrarDatosPacientes();
+            }
+            else
+            {
+                MessageBox.Show("Ultimo Registro", "Registro de Materias");
+            }
+        }
+
+        private void btnUltimoPaciente_Click(object sender, EventArgs e)
+        {
+            posicion = miTabla.Rows.Count - 1;
+            mostrarDatosPacientes();
+        }
+
+        private void btnAnteriorPaciente_Click(object sender, EventArgs e)
+        {
+            if (posicion > 0)
+            {
+                posicion--;
+                mostrarDatosPacientes();
+            }
+            else
+            {
+                MessageBox.Show("Primer regisro", "Registro de Materias");
+            }
+        }
+
+        private void btnPrimeroPaciente_Click(object sender, EventArgs e)
+        {
+            posicion = 0;
+            mostrarDatosPacientes();
+        }
+
+        private void btnNuevoMateria_Click(object sender, EventArgs e)
+        {
+            if (btnNuevoPaciente.Text == "Nuevo")
+            {
+                btnNuevoPaciente.Text = "Guardar";
+                btnNuevoPaciente.Text = "Cancelar";
+                estadoControles(false);
+                limpiarCajas();
+                accion = "nuevo";
+            }
+            else
+            {//Guardar
+                String[] materias = new string[] {
+                    accion,txtCodigoMateria.Text, txtNombreMateria.Text, txtUvMateria.Text,
+                    miTabla.Rows[posicion].ItemArray[0].ToString()
+                };
+                String msg = objConexion.mantenimientoMaterias(materias);
+                if (msg != "1")
+                {
+                    MessageBox.Show("Error en el registro de materias: " + msg, "Registro de Materias.", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    actualizarDsMaterias();
+                    estadoControles(true);
+                    btnNuevoMateria.Text = "Nuevo";
+                    btnModificarMateria.Text = "Modificar";
+                }
+            }
+        }
 
         private void estadoControles(Boolean estado)
         {
