@@ -37,12 +37,6 @@
             this.gestionPacientesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gestionPacientesTableAdapter = new SistemaFarmacia.db_clinicaDataSetTableAdapters.GestionPacientesTableAdapter();
             this.tableAdapterManager = new SistemaFarmacia.db_clinicaDataSetTableAdapters.TableAdapterManager();
-            this.grdGestionPacientes = new System.Windows.Forms.DataGridView();
-            this.idPacientes = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.direccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtCodigoPaciente = new System.Windows.Forms.TextBox();
             this.txtNombrePaciente = new System.Windows.Forms.TextBox();
             this.txtDireccionPaciente = new System.Windows.Forms.TextBox();
@@ -62,12 +56,18 @@
             this.txtBuscarPacientes = new System.Windows.Forms.TextBox();
             this.lblBuscarPacientes = new System.Windows.Forms.Label();
             this.erpPacientes = new System.Windows.Forms.ErrorProvider(this.components);
+            this.telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.direccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idPacientes = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.grdGestionPacientes = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.db_clinicaDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gestionPacientesBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.grdGestionPacientes)).BeginInit();
             this.grbEdicionPaciente.SuspendLayout();
             this.grbNavegacionPaciente.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.erpPacientes)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grdGestionPacientes)).BeginInit();
             this.SuspendLayout();
             // 
             // lblCodigoPaciente
@@ -125,63 +125,6 @@
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
             this.tableAdapterManager.GestionPacientesTableAdapter = this.gestionPacientesTableAdapter;
             this.tableAdapterManager.UpdateOrder = SistemaFarmacia.db_clinicaDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
-            // 
-            // grdGestionPacientes
-            // 
-            this.grdGestionPacientes.AllowUserToAddRows = false;
-            this.grdGestionPacientes.AllowUserToDeleteRows = false;
-            this.grdGestionPacientes.AutoGenerateColumns = false;
-            this.grdGestionPacientes.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
-            this.grdGestionPacientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.grdGestionPacientes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idPacientes,
-            this.codigo,
-            this.nombre,
-            this.direccion,
-            this.telefono});
-            this.grdGestionPacientes.DataSource = this.gestionPacientesBindingSource;
-            this.grdGestionPacientes.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.grdGestionPacientes.Location = new System.Drawing.Point(382, 47);
-            this.grdGestionPacientes.Name = "grdGestionPacientes";
-            this.grdGestionPacientes.ReadOnly = true;
-            this.grdGestionPacientes.Size = new System.Drawing.Size(535, 230);
-            this.grdGestionPacientes.TabIndex = 1;
-            // 
-            // idPacientes
-            // 
-            this.idPacientes.DataPropertyName = "idPacientes";
-            this.idPacientes.HeaderText = "ID";
-            this.idPacientes.Name = "idPacientes";
-            this.idPacientes.ReadOnly = true;
-            this.idPacientes.Visible = false;
-            // 
-            // codigo
-            // 
-            this.codigo.DataPropertyName = "codigo";
-            this.codigo.HeaderText = "CODIGO";
-            this.codigo.Name = "codigo";
-            this.codigo.ReadOnly = true;
-            // 
-            // nombre
-            // 
-            this.nombre.DataPropertyName = "nombre";
-            this.nombre.HeaderText = "NOMBRE";
-            this.nombre.Name = "nombre";
-            this.nombre.ReadOnly = true;
-            // 
-            // direccion
-            // 
-            this.direccion.DataPropertyName = "direccion";
-            this.direccion.HeaderText = "DIRECCION";
-            this.direccion.Name = "direccion";
-            this.direccion.ReadOnly = true;
-            // 
-            // telefono
-            // 
-            this.telefono.DataPropertyName = "telefono";
-            this.telefono.HeaderText = "TELEFONO";
-            this.telefono.Name = "telefono";
-            this.telefono.ReadOnly = true;
             // 
             // txtCodigoPaciente
             // 
@@ -282,7 +225,7 @@
             this.grbNavegacionPaciente.Controls.Add(this.btnUltimoPaciente);
             this.grbNavegacionPaciente.Controls.Add(this.btnAnteriorPaciente);
             this.grbNavegacionPaciente.Controls.Add(this.btnPrimeroPaciente);
-            this.grbNavegacionPaciente.Location = new System.Drawing.Point(393, 300);
+            this.grbNavegacionPaciente.Location = new System.Drawing.Point(388, 300);
             this.grbNavegacionPaciente.Name = "grbNavegacionPaciente";
             this.grbNavegacionPaciente.Size = new System.Drawing.Size(225, 79);
             this.grbNavegacionPaciente.TabIndex = 16;
@@ -355,6 +298,7 @@
             // 
             this.txtBuscarPacientes.Location = new System.Drawing.Point(634, 13);
             this.txtBuscarPacientes.Name = "txtBuscarPacientes";
+            this.txtBuscarPacientes.ReadOnly = true;
             this.txtBuscarPacientes.Size = new System.Drawing.Size(233, 20);
             this.txtBuscarPacientes.TabIndex = 18;
             this.txtBuscarPacientes.TextChanged += new System.EventHandler(this.txtBuscarPacientes_TextChanged);
@@ -371,6 +315,63 @@
             // erpPacientes
             // 
             this.erpPacientes.ContainerControl = this;
+            // 
+            // telefono
+            // 
+            this.telefono.DataPropertyName = "telefono";
+            this.telefono.HeaderText = "TELEFONO";
+            this.telefono.Name = "telefono";
+            this.telefono.ReadOnly = true;
+            // 
+            // direccion
+            // 
+            this.direccion.DataPropertyName = "direccion";
+            this.direccion.HeaderText = "DIRECCION";
+            this.direccion.Name = "direccion";
+            this.direccion.ReadOnly = true;
+            // 
+            // nombre
+            // 
+            this.nombre.DataPropertyName = "nombre";
+            this.nombre.HeaderText = "NOMBRE";
+            this.nombre.Name = "nombre";
+            this.nombre.ReadOnly = true;
+            // 
+            // codigo
+            // 
+            this.codigo.DataPropertyName = "codigo";
+            this.codigo.HeaderText = "CODIGO";
+            this.codigo.Name = "codigo";
+            this.codigo.ReadOnly = true;
+            // 
+            // idPacientes
+            // 
+            this.idPacientes.DataPropertyName = "idPacientes";
+            this.idPacientes.HeaderText = "ID";
+            this.idPacientes.Name = "idPacientes";
+            this.idPacientes.ReadOnly = true;
+            this.idPacientes.Visible = false;
+            // 
+            // grdGestionPacientes
+            // 
+            this.grdGestionPacientes.AllowUserToAddRows = false;
+            this.grdGestionPacientes.AllowUserToDeleteRows = false;
+            this.grdGestionPacientes.AutoGenerateColumns = false;
+            this.grdGestionPacientes.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
+            this.grdGestionPacientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grdGestionPacientes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idPacientes,
+            this.codigo,
+            this.nombre,
+            this.direccion,
+            this.telefono});
+            this.grdGestionPacientes.DataSource = this.gestionPacientesBindingSource;
+            this.grdGestionPacientes.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.grdGestionPacientes.Location = new System.Drawing.Point(382, 47);
+            this.grdGestionPacientes.Name = "grdGestionPacientes";
+            this.grdGestionPacientes.ReadOnly = true;
+            this.grdGestionPacientes.Size = new System.Drawing.Size(535, 230);
+            this.grdGestionPacientes.TabIndex = 1;
             // 
             // GestionPacientes
             // 
@@ -397,11 +398,11 @@
             this.Load += new System.EventHandler(this.GestionPacientes_Load);
             ((System.ComponentModel.ISupportInitialize)(this.db_clinicaDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gestionPacientesBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.grdGestionPacientes)).EndInit();
             this.grbEdicionPaciente.ResumeLayout(false);
             this.grbNavegacionPaciente.ResumeLayout(false);
             this.grbNavegacionPaciente.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.erpPacientes)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grdGestionPacientes)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -413,12 +414,6 @@
         private System.Windows.Forms.BindingSource gestionPacientesBindingSource;
         private db_clinicaDataSetTableAdapters.GestionPacientesTableAdapter gestionPacientesTableAdapter;
         private db_clinicaDataSetTableAdapters.TableAdapterManager tableAdapterManager;
-        private System.Windows.Forms.DataGridView grdGestionPacientes;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idPacientes;
-        private System.Windows.Forms.DataGridViewTextBoxColumn codigo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nombre;
-        private System.Windows.Forms.DataGridViewTextBoxColumn direccion;
-        private System.Windows.Forms.DataGridViewTextBoxColumn telefono;
         private System.Windows.Forms.TextBox txtCodigoPaciente;
         private System.Windows.Forms.TextBox txtNombrePaciente;
         private System.Windows.Forms.TextBox txtDireccionPaciente;
@@ -442,5 +437,11 @@
         private System.Windows.Forms.Label lblBuscarPacientes;
         private System.Windows.Forms.Button btnSiguientePacientes;
         private System.Windows.Forms.ErrorProvider erpPacientes;
+        private System.Windows.Forms.DataGridView grdGestionPacientes;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idPacientes;
+        private System.Windows.Forms.DataGridViewTextBoxColumn codigo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn direccion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn telefono;
     }
 }

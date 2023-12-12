@@ -19,10 +19,7 @@ namespace SistemaFarmacia
 
 
 
-        public int _idMateria = 0;
-        public String _codigo = "";
-        public String _materia = "";
-        public int _uv = 0;
+        
 
         public int posicion = 0;
         String accion = "nuevo";
@@ -73,7 +70,7 @@ namespace SistemaFarmacia
 
         private void mostrarDatosPacientes()
         {
-            if (miTabla.Rows.Count > 0)
+            if (miTabla.Rows.Count > 0 && posicion >= 0 && posicion < miTabla.Rows.Count)
             {
                 txtCodigoPaciente.Text = miTabla.Rows[posicion].ItemArray[1].ToString();
                 txtNombrePaciente.Text = miTabla.Rows[posicion].ItemArray[2].ToString();
@@ -86,8 +83,12 @@ namespace SistemaFarmacia
             {
                 limpiarCajas();
             }
-
         }
+
+            
+        
+
+
 
         private void btnSiguientePacientes_Click(object sender, EventArgs e)
         {
@@ -127,18 +128,18 @@ namespace SistemaFarmacia
             mostrarDatosPacientes();
         }
 
-        private void btnNuevoMateria_Click(object sender, EventArgs e)
+        private void btnNuevoPaciente_Click(object sender, EventArgs e)
         {
             if (btnNuevoPaciente.Text == "Nuevo")
             {
                 btnNuevoPaciente.Text = "Guardar";
-                btnNuevoPaciente.Text = "Cancelar";
+                btnModificarPaciente.Text = "Cancelar";
                 estadoControles(false);
                 limpiarCajas();
                 accion = "nuevo";
             }
             else
-            {//Guardar
+            {
                 String[] GestionPacientes = new string[] {
                     accion,txtCodigoPaciente.Text, txtNombrePaciente.Text, txtDireccionPaciente.Text,txtTelefonoPaciente.Text,
                     miTabla.Rows[posicion].ItemArray[0].ToString()
@@ -159,7 +160,7 @@ namespace SistemaFarmacia
         }
 
 
-        private void btnModificarMateria_Click(object sender, EventArgs e)
+        private void btnModificarPaciente_Click(object sender, EventArgs e)
         {
             if (btnModificarPaciente.Text == "Modificar")
             {
@@ -197,7 +198,7 @@ namespace SistemaFarmacia
             txtTelefonoPaciente.Text = "";
         }
 
-        private void txtBuscarMaterias_KeyUp(object sender, KeyEventArgs e)
+        private void txtBuscarPacciente_KeyUp(object sender, KeyEventArgs e)
         {
             filtrarPacientes(txtBuscarPacientes.Text, cboOpcionBuscarPacientes.SelectedIndex);
             if (e.KeyValue == 13)
@@ -207,12 +208,8 @@ namespace SistemaFarmacia
         }
         private void seleccionarPaciente()
         {
-            _idMateria = int.Parse(grdGestionPacientes.CurrentRow.Cells["idMateria"].Value.ToString());
-            _codigo = grdGestionPacientes.CurrentRow.Cells["codigo"].Value.ToString();
-            _materia = grdGestionPacientes.CurrentRow.Cells["nombre"].Value.ToString();
-            _uv = int.Parse(grdGestionPacientes.CurrentRow.Cells["uv"].Value.ToString());
 
-            posicion = miTabla.Rows.IndexOf(miTabla.Rows.Find(_idMateria.ToString()));
+            posicion = miTabla.Rows.IndexOf(miTabla.Rows.Find(grdGestionPacientes.CurrentRow.Cells["idPacientes"].Value.ToString()));
             mostrarDatosPacientes();
         }
 
@@ -221,7 +218,7 @@ namespace SistemaFarmacia
             seleccionarPaciente();
         }
 
-        private void btnEliminarMateria_Click(object sender, EventArgs e)
+        private void btnEliminarPaciente_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("Esta seguro de eliminar a " + txtCodigoPaciente.Text, "Paciente Eliminado",
                 MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
@@ -233,7 +230,7 @@ namespace SistemaFarmacia
                 String msg = objConexion.mantenimientoPaciente(GestionPacientes);
                 if (msg != "1")
                 {
-                    MessageBox.Show("Error en la eliminacion de materias: " + msg, "Registro de Materias.", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Error en la eliminacion: " + msg, "Registro de Paciente.", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else
                 {
@@ -260,10 +257,7 @@ namespace SistemaFarmacia
 
         }
 
-        private void btnNuevoPaciente_Click(object sender, EventArgs e)
-        {
-           
-        }
+        
 
         private void btnEliminarPaciente_Click_1(object sender, EventArgs e)
         {  
