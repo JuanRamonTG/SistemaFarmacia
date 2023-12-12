@@ -53,7 +53,6 @@
             this.btnAnteriorPaciente = new System.Windows.Forms.Button();
             this.btnPrimeroPaciente = new System.Windows.Forms.Button();
             this.cboOpcionBuscarPacientes = new System.Windows.Forms.ComboBox();
-            this.txtBuscarPacientes = new System.Windows.Forms.TextBox();
             this.lblBuscarPacientes = new System.Windows.Forms.Label();
             this.telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.direccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -62,6 +61,7 @@
             this.idPacientes = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.grdGestionPacientes = new System.Windows.Forms.DataGridView();
             this.erpPacientes = new System.Windows.Forms.ErrorProvider(this.components);
+            this.txtBuscarPacientes = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.db_clinicaDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gestionPacientesBindingSource)).BeginInit();
             this.grbEdicionPaciente.SuspendLayout();
@@ -206,6 +206,7 @@
             this.btnModificarPaciente.TabIndex = 8;
             this.btnModificarPaciente.Text = "Modificar";
             this.btnModificarPaciente.UseVisualStyleBackColor = true;
+            this.btnModificarPaciente.Click += new System.EventHandler(this.btnModificarPaciente_Click_1);
             // 
             // btnNuevoPaciente
             // 
@@ -298,15 +299,6 @@
             this.cboOpcionBuscarPacientes.Size = new System.Drawing.Size(163, 21);
             this.cboOpcionBuscarPacientes.TabIndex = 19;
             // 
-            // txtBuscarPacientes
-            // 
-            this.txtBuscarPacientes.Location = new System.Drawing.Point(634, 13);
-            this.txtBuscarPacientes.Name = "txtBuscarPacientes";
-            this.txtBuscarPacientes.ReadOnly = true;
-            this.txtBuscarPacientes.Size = new System.Drawing.Size(233, 20);
-            this.txtBuscarPacientes.TabIndex = 18;
-            this.txtBuscarPacientes.TextChanged += new System.EventHandler(this.txtBuscarPacientes_TextChanged);
-            // 
             // lblBuscarPacientes
             // 
             this.lblBuscarPacientes.AutoSize = true;
@@ -377,14 +369,22 @@
             // 
             this.erpPacientes.ContainerControl = this;
             // 
+            // txtBuscarPacientes
+            // 
+            this.txtBuscarPacientes.Location = new System.Drawing.Point(619, 13);
+            this.txtBuscarPacientes.Name = "txtBuscarPacientes";
+            this.txtBuscarPacientes.ReadOnly = true;
+            this.txtBuscarPacientes.Size = new System.Drawing.Size(206, 20);
+            this.txtBuscarPacientes.TabIndex = 21;
+            // 
             // GestionPacientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(973, 413);
+            this.Controls.Add(this.txtBuscarPacientes);
             this.Controls.Add(this.lblBuscarPacientes);
             this.Controls.Add(this.cboOpcionBuscarPacientes);
-            this.Controls.Add(this.txtBuscarPacientes);
             this.Controls.Add(this.grbEdicionPaciente);
             this.Controls.Add(this.grbNavegacionPaciente);
             this.Controls.Add(this.grdGestionPacientes);
@@ -437,7 +437,6 @@
         private System.Windows.Forms.Label lblTelefono;
         private System.Windows.Forms.Label lblRegistroPaciente;
         private System.Windows.Forms.ComboBox cboOpcionBuscarPacientes;
-        private System.Windows.Forms.TextBox txtBuscarPacientes;
         private System.Windows.Forms.Label lblBuscarPacientes;
         private System.Windows.Forms.Button btnSiguientePacientes;
         private System.Windows.Forms.DataGridView grdGestionPacientes;
@@ -447,5 +446,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn direccion;
         private System.Windows.Forms.DataGridViewTextBoxColumn telefono;
         private System.Windows.Forms.ErrorProvider erpPacientes;
+        private System.Windows.Forms.TextBox txtBuscarPacientes;
     }
 }

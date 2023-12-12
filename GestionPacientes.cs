@@ -160,7 +160,7 @@ namespace SistemaFarmacia
         }
 
 
-        private void btnModificarPaciente_Click(object sender, EventArgs e)
+        private void btnModificarPaciente_Click_1(object sender, EventArgs e)
         {
             if (btnModificarPaciente.Text == "Modificar")
             {
@@ -198,7 +198,7 @@ namespace SistemaFarmacia
             txtTelefonoPaciente.Text = "";
         }
 
-        private void txtBuscarPacciente_KeyUp(object sender, KeyEventArgs e)
+        private void txtBuscarPacientes_TextChanged(object sender, EventArgs e)
         {
             filtrarPacientes(txtBuscarPacientes.Text, cboOpcionBuscarPacientes.SelectedIndex);
             if (e.KeyValue == 13)
@@ -218,7 +218,7 @@ namespace SistemaFarmacia
             seleccionarPaciente();
         }
 
-        private void btnEliminarPaciente_Click(object sender, EventArgs e)
+        private void btnEliminarPaciente_Click_1(object sender, EventArgs e)
         {
             if (MessageBox.Show("Esta seguro de eliminar a " + txtCodigoPaciente.Text, "Paciente Eliminado",
                 MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
@@ -259,24 +259,13 @@ namespace SistemaFarmacia
 
         
 
-        private void btnEliminarPaciente_Click_1(object sender, EventArgs e)
-        {  
-
-
-
-        }
-
-        private void txtBuscarPacientes_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
+       
+        
+        
         private void txtCodigoPaciente_TextChanged(object sender, EventArgs e)
         {
 
         }
-
-        
 
         
     }
